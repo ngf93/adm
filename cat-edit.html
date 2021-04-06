@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <meta name="viewport" content="width=1920">
+    <title>Admin - Редактирование Категории</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/extra.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+<body class="position-relative">
+    <!-- left nav -->
+    <nav class="navigation position-fixed shadow-sm bg-white top-0 bottom-0 start-0 overflow-auto-hidden">
+        <a href="index.html" class="my-4 d-block text-center">
+            <img src="img/images/logo.svg" width="88" height="18" alt="Voo Voo Логотип">
+        </a>
+        <div class="nav-item mx-auto">
+            <div class="nav-link active text-center px-0">
+                <img class="rounded-circle user mx-auto" src="img/images/user.jpg" alt="Пользователь">
+            </div>
+        </div>
+        <div>
+            <div class="nav-item">
+                <a class="nav-link" href="index.html">
+                    <img class="nav-icon" src="img/icons/icon1.svg">
+                    <span>Структура сайта</span>
+                </a>
+            </div>
+            <div class="nav-item">
+                <a class="nav-link" href="edit.html">
+                    <img class="nav-icon" src="img/icons/icon2.svg">
+                    <span>Каталог</span>
+                </a>
+            </div>
+            <div class="nav-item">
+                <a class="nav-link" href="items.html">
+                    <img class="nav-icon" src="img/icons/icon3.svg">
+                    <span>Товары</span>
+                </a>
+            </div>
+            <div class="nav-item">
+                <a class="nav-link" href="photos.html">
+                    <img class="nav-icon" src="img/icons/icon4.svg">
+                    <span>Фильтрация</span>
+                </a>
+            </div>
+            <div class="nav-item">
+                <a class="nav-link" href="promo.html">
+                    <img class="nav-icon" src="img/icons/icon5.svg">
+                    <span>Квиз</span>
+                </a>
+            </div>
+            <div class="nav-item">
+                <a class="nav-link" href="#">
+                    <img class="nav-icon" src="img/icons/icon6.svg">
+                    <span>Новости</span>
+                </a>
+            </div>
+            <div class="nav-item">
+                <a class="nav-link" href="#">
+                    <img class="nav-icon" src="img/icons/icon7.svg">
+                    <span>Отзывы</span>
+                </a>
+            </div>
+            <div class="nav-item">
+                <a class="nav-link" href="#">
+                    <img class="nav-icon" src="img/icons/icon8.svg">
+                    <span>Вакансии</span>
+                </a>
+            </div>
+            <div class="nav-item">
+                <a class="nav-link" href="#">
+                    <img class="nav-icon" src="img/icons/icon9.svg">
+                    <span>Сотрудники</span>
+                </a>
+            </div>
+            <div class="nav-item">
+                <a class="nav-link" href="#">
+                    <img class="nav-icon" src="img/icons/icon10.svg">
+                    <span>Домен и хостинг</span>
+                </a>
+            </div>
+            <div class="nav-item">
+                <a class="nav-link" href="#">
+                    <img class="nav-icon" src="img/icons/icon11.svg">
+                    <span>Настройки</span>
+                </a>
+            </div>
+            <div class="nav-item">
+                <a class="nav-link" href="#">
+                    <img class="nav-icon" src="img/icons/icon12.svg">
+                    <span>Выйти</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- main content -->
+    <div class="main-area position-relative">
+        <!-- top nav -->
+        <nav class="nav-top bg-white shadow w-100 d-flex align-items-center px-5">
+            <div class="d-inline-block" style="width: 19rem;">
+                <input class="form-control ps-5 col-3 form-search" list="datalistOptions" id="exampleDataList" placeholder="Поиск...">
+                <datalist id="datalistOptions">
+                    <option value="San Francisco">
+                    <option value="New York">
+                    <option value="Seattle">
+                </datalist>
+            </div>
+            <button class="btn btn-link btn-filter p-0 ms-5"></button>
+        </nav>
+        <main class="d-flex px-5 py-4">
+            <section class="content bg-white">
+                <!-- breadcrumb -->
+                <div class="py-3 px-4 border-bottom">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb fw-bold mb-0">
+                            <li class="breadcrumb-item"><a href="#">Каталог</a></li>
+                            <li class="breadcrumb-item"><a href="#">Список</a></li>
+                            <li class="breadcrumb-item active fw-normal" aria-current="page">Редактировать</li>
+                        </ol>
+                    </nav>
+                </div>
+                <!-- tabs group -->
+                <div class=" px-5 pt-4">
+                    <!-- tabs links -->
+                    <ul class="nav nav-tabs fw-medium" id="myTab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="characteristics-tab" data-bs-toggle="tab" data-bs-target="#characteristics" type="button" role="tab" aria-controls="characteristics" aria-selected="true">Характеристики</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="options-tab" data-bs-toggle="tab" data-bs-target="#options" type="button" role="tab" aria-controls="options" aria-selected="false">Параметры</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="seo-tab" data-bs-toggle="tab" data-bs-target="#seo" type="button" role="tab" aria-controls="seo" aria-selected="false">SEO</button>
+                        </li>
+                    </ul>
+                    <!-- tabs content -->
+                    <div class="tab-content pt-5" id="myTabContent">
+                        <!-- characteristics Tab -->
+                        <div class="tab-pane fade show active d-flx" id="characteristics" role="tabpanel" aria-labelledby="characteristics-tab">
+                            <div class="d-flex">
+                                <div class="col-5 pe-5">
+                                    <div class="mb-3">
+                                        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Название">
+                                    </div>
+                                    <!-- custom select single -->
+                                    <div class="custom-select single mb-3">
+                                        <button type="button">Не выбрано</button>
+                                        <div class="cs-options search-list">
+                                            <input type="search" placeholder="Поиск" class="search-in-list">
+                                            <div class="radio search-item">
+                                                <input type="radio" name="radio-opt" value="Для влюбленных">
+                                                <label>Для влюбленных</label>
+                                            </div>
+                                            <div class="sublevel">
+                                                <div class="radio search-item">
+                                                    <input type="radio" name="radio-opt" value="Вкусные подарки Любовь">
+                                                    <label>
+                                                        <span class="nesting">-</span>
+                                                        <span class="level-mark">2</span>
+                                                        Вкусные подарки Любовь
+                                                    </label>
+                                                </div>
+                                                <div class="radio search-item">
+                                                    <input type="radio" name="radio-opt" value="Другое">
+                                                    <label>
+                                                        <span class="nesting">+</span>
+                                                        <span class="level-mark">2</span>
+                                                        Другое
+                                                    </label>
+                                                </div>
+                                                <div class="sublevel">
+                                                    <div class="radio search-item">
+                                                        <input type="radio" name="radio-opt" value="Термостакан “Любовь...">
+                                                        <label>
+                                                            <span class="nesting">-</span>
+                                                            <span class="level-mark">3</span>
+                                                            Термостакан “Любовь...
+                                                        </label>
+                                                    </div>
+                                                    <div class="radio search-item">
+                                                        <input type="radio" name="radio-opt" value="Другое 2">
+                                                        <label>
+                                                            <span class="nesting">-</span>
+                                                            <span class="level-mark">3</span>
+                                                            Другое 2
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="radio search-item">
+                                                <input type="radio" name="radio-opt" value="Подарочные наборы">
+                                                <label>Подарочные наборы</label>
+                                            </div>
+                                            <div class="sublevel">
+                                                <div class="radio search-item">
+                                                    <input type="radio" name="radio-opt" value="Мужские наборы">
+                                                    <label>
+                                                        <span class="nesting">-</span>
+                                                        <span class="level-mark">2</span>
+                                                        Мужские наборы
+                                                    </label>
+                                                </div>
+                                                <div class="radio search-item">
+                                                    <input type="radio" name="radio-opt" value="Женские наборы">
+                                                    <label>
+                                                        <span class="nesting">-</span>
+                                                        <span class="level-mark">2</span>
+                                                        Женские наборы
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="radio search-item">
+                                                <input type="radio" name="radio-opt" value="Товары 18+">
+                                                <label>Товары 18+</label>
+                                            </div>
+                                            <div class="radio search-item">
+                                                <input type="radio" name="radio-opt" value="Воздушные шары">
+                                                <label>Воздушные шары</label>
+                                            </div>
+                                            <div class="sublevel">
+                                                <div class="radio search-item">
+                                                    <input type="radio" name="radio-opt" value="Латексные шары">
+                                                    <label>
+                                                        <span class="nesting">-</span>
+                                                        <span class="level-mark">2</span>
+                                                        Латексные шары
+                                                    </label>
+                                                </div>
+                                                <div class="radio search-item">
+                                                    <input type="radio" name="radio-opt" value="Фольгированные шары">
+                                                    <label>
+                                                        <span class="nesting">-</span>
+                                                        <span class="level-mark">2</span>
+                                                        Фольгированные шары
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="radio search-item">
+                                                <input type="radio" name="radio-opt" value="Фотоальбомы">
+                                                <label>Фотоальбомы</label>
+                                            </div>
+                                            <div class="sublevel">
+                                                <div class="radio search-item">
+                                                    <input type="radio" name="radio-opt" value="Детские фотоальбомы и фотокниги">
+                                                    <label>
+                                                        <span class="nesting">-</span>
+                                                        <span class="level-mark">2</span>
+                                                        Детские фотоальбомы и фотокниги
+                                                    </label>
+                                                </div>
+                                                <div class="radio search-item">
+                                                    <input type="radio" name="radio-opt" value="Свадебные фотоальбомы">
+                                                    <label>
+                                                        <span class="nesting">-</span>
+                                                        <span class="level-mark">2</span>
+                                                        Свадебные фотоальбомы
+                                                    </label>
+                                                </div>
+                                                <div class="radio search-item">
+                                                    <input type="radio" name="radio-opt" value="Классические фотоальбомы и фотокниги">
+                                                    <label>
+                                                        <span class="nesting">-</span>
+                                                        <span class="level-mark">2</span>
+                                                        Классические фотоальбомы и фотокниги
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="radio search-item">
+                                                <input type="radio" name="radio-opt" value="Подарочная косметика">
+                                                <label>Подарочная косметика</label>
+                                            </div>
+                                            <div class="radio search-item">
+                                                <input type="radio" name="radio-opt" value="Необычные вкусные подарки">
+                                                <label>Необычные вкусные подарки</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- custom select multy -->
+                                    <div class="custom-select multy mb-3">
+                                        <button type="button">Не выбрано</button>
+                                        <div class="cs-options search-list">
+                                            <input type="search" placeholder="Поиск" class="search-in-list">
+                                            <div class="checkbox search-item">
+                                                <input type="checkbox" name="offer-opt" value="Акция 1">
+                                                <label>Акция 1</label>
+                                            </div>
+                                            <div class="checkbox search-item">
+                                                <input type="checkbox" name="offer-opt" value="Акция 2">
+                                                <label>Акция 2</label>
+                                            </div>
+                                            <div class="checkbox search-item">
+                                                <input type="checkbox" name="offer-opt" value="Акция 3">
+                                                <label>Акция 3</label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row gx-3 align-items-center mb-3">    
+                                        <div class="col-6">
+                                            <div class="lh_n">Порядковый номер</div>
+                                        </div>
+                                        <div class="col-6">
+                                            <input type="text" class="form-control text-end" placeholder="0" value="2">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-check form-switch mb-3 ps-0 d-flex justify-content-between">
+                                        <label class="form-check-label" for="status-switch">Статус</label>
+                                        <div class="d-flex align-items-center fs-6 flex-row-reverse">
+                                            <input class="form-check-input m-0 float-none" type="checkbox" id="status-switch">
+                                            <span class="text-muted me-4 status-state"></span>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <span>Дата изменения</span>
+                                        <span class="text-muted">24.02.21</span>
+                                    </div>
+                                </div>
+                                <div class="col-5 position-relative">
+                                    <div class="h2 position-absolute" style="top: -55px;">Фото</div>
+                                    <ul class="nav nav-tabs fw-medium" id="myTab" role="tablist">
+                                        <li class="nav-item" role="presentation">
+                                            <button class="nav-link active" id="main-tab" data-bs-toggle="tab" data-bs-target="#main" type="button" role="tab" aria-controls="main" aria-selected="true">Основное</button>
+                                        </li>
+                                        <li class="nav-item" role="presentation">
+                                            <button class="nav-link" id="plug-tab" data-bs-toggle="tab" data-bs-target="#plug" type="button" role="tab" aria-controls="plug" aria-selected="false">Заглушки</button>
+                                        </li>
+                                    </ul>
+                                    <div class="tab-content pt-5" id="myTabContent">
+                                        <!-- Main Photo Tab -->
+                                        <div class="tab-pane fade show active" id="main" role="tabpanel" aria-labelledby="main-tab">
+                                            <div class="mb-3">
+                                                <span class="text-muted me-4">нажмите</span>
+                                                <div class="position-relative d-inline-block">
+                                                    <input type="file" class="top-0 start-0 w-100 h-100 position-absolute">
+                                                    <div class="btn btn-primary">Загрузить</div>
+                                                </div>
+                                            </div>
+                                            <div class="d-flex row row-cols-2 gx-4 align-items-start">
+                                                <div>
+                                                    <div class="border-dashed text-center text-muted d-flex flex-column align-items-center justify-content-center py-5" style="height: 20.625rem;">
+                                                        <svg width="65" height="53" viewBox="0 0 65 53" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M54.1567 17.8931C51.1526 5.92548 39.0158 -1.34077 27.0482 1.66337C17.6959 4.01111 10.905 12.0942 10.2053 21.7113C3.56472 22.8064 -0.930829 29.0773 0.164276 35.7179C1.13777 41.6214 6.25317 45.9449 12.2363 45.9211H22.3915V41.8591H12.2363C7.74953 41.8591 4.11221 38.2217 4.11221 33.735C4.11221 29.2482 7.74953 25.6108 12.2363 25.6108C13.3581 25.6108 14.2674 24.7016 14.2674 23.5798C14.2572 13.4845 22.433 5.29231 32.5283 5.28228C41.2673 5.27352 48.7901 11.4517 50.4806 20.0255C50.6475 20.8816 51.3422 21.5356 52.2069 21.6503C57.7595 22.441 61.6196 27.5832 60.829 33.1357C60.1191 38.1216 55.862 41.8339 50.8258 41.8591H42.7017V45.9211H50.8258C58.6778 45.8974 65.0237 39.5128 64.9999 31.6609C64.9801 25.1248 60.5062 19.4441 54.1567 17.8931Z" fill="#392DFF"/>
+                                                                <path d="M31.1048 26.2L22.9807 34.3241L25.8445 37.1878L30.5158 32.5368V52.0143H34.5779V32.5368L39.2289 37.1878L42.0927 34.3241L33.9686 26.2C33.1763 25.4124 31.897 25.4124 31.1048 26.2Z" fill="#392DFF"/>
+                                                            </svg>
+                                                        <span class="mt-4 mb-5">или <span class="fw-bold">перетащите фотографию</span></span>
+                                                        <span>800 х 600</span>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <div class="mb-3 d-flex" style="background-color: #E5E5E5; height: 20.625rem;">
+                                                        <svg class="m-auto" width="120" height="151" viewBox="0 0 120 151" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M108.649 105.405H11.3513C9.20166 105.403 7.14083 104.548 5.62082 103.028C4.10081 101.508 3.24574 99.4469 3.24316 97.2973V38.9189C3.24574 36.7693 4.10081 34.7085 5.62082 33.1885C7.14083 31.6685 9.20166 30.8134 11.3513 30.8108H37.5924C37.9097 30.8108 38.22 30.7177 38.4849 30.543C38.7498 30.3683 38.9576 30.1198 39.0826 29.8281L42.2626 22.4092C42.6373 21.5342 43.2605 20.7884 44.0549 20.2641C44.8492 19.7398 45.78 19.46 46.7318 19.4595H73.268C74.2199 19.4596 75.1509 19.739 75.9456 20.263C76.7403 20.787 77.3638 21.5327 77.7388 22.4076L80.9188 29.8281C81.0439 30.1198 81.2517 30.3683 81.5166 30.543C81.7815 30.7177 82.0918 30.8108 82.4091 30.8108H108.649C110.798 30.8134 112.859 31.6685 114.379 33.1885C115.899 34.7085 116.754 36.7693 116.757 38.9189V97.2973C116.754 99.4469 115.899 101.508 114.379 103.028C112.859 104.548 110.798 105.403 108.649 105.405ZM11.3513 34.0541C10.061 34.0541 8.82363 34.5666 7.91129 35.479C6.99895 36.3913 6.48641 37.6287 6.48641 38.9189V97.2973C6.48641 98.5875 6.99895 99.8249 7.91129 100.737C8.82363 101.65 10.061 102.162 11.3513 102.162H108.649C109.939 102.162 111.176 101.65 112.089 100.737C113.001 99.8249 113.513 98.5875 113.513 97.2973V38.9189C113.513 37.6287 113.001 36.3913 112.089 35.479C111.176 34.5666 109.939 34.0541 108.649 34.0541H82.4075C81.4556 34.054 80.5246 33.7746 79.7299 33.2506C78.9352 32.7265 78.3117 31.9809 77.9367 31.106L74.7567 23.6854C74.6318 23.394 74.4242 23.1457 74.1596 22.971C73.895 22.7963 73.5851 22.7031 73.268 22.7027H46.7318C46.4145 22.7028 46.1042 22.7959 45.8393 22.9706C45.5744 23.1452 45.3666 23.3938 45.2415 23.6854L42.0615 31.1043C41.6868 31.9793 41.0637 32.7251 40.2693 33.2494C39.4749 33.7737 38.5442 34.0535 37.5924 34.0541H11.3513Z" fill="#909090"/>
+                                                            <path d="M30.8109 34.054H16.2163C15.7863 34.054 15.3738 33.8831 15.0697 33.579C14.7656 33.2749 14.5947 32.8624 14.5947 32.4324V25.9459C14.5947 25.0857 14.9364 24.2608 15.5447 23.6526C16.1529 23.0443 16.9778 22.7026 17.838 22.7026H29.1893C30.0495 22.7026 30.8744 23.0443 31.4826 23.6526C32.0909 24.2608 32.4326 25.0857 32.4326 25.9459V32.4324C32.4326 32.8624 32.2617 33.2749 31.9576 33.579C31.6535 33.8831 31.241 34.054 30.8109 34.054ZM17.838 30.8107H29.1893V25.9459H17.838V30.8107Z" fill="#909090"/>
+                                                            <path d="M41.8864 85.9459H4.86479C4.43471 85.9459 4.02224 85.7751 3.71813 85.471C3.41401 85.1669 3.24316 84.7544 3.24316 84.3243V51.8919C3.24316 51.4618 3.41401 51.0493 3.71813 50.7452C4.02224 50.4411 4.43471 50.2703 4.86479 50.2703H41.8864C42.3165 50.2703 42.729 50.4411 43.0331 50.7452C43.3372 51.0493 43.508 51.4618 43.508 51.8919C43.508 52.322 43.3372 52.7344 43.0331 53.0385C42.729 53.3427 42.3165 53.5135 41.8864 53.5135H6.48641V82.7027H41.8864C42.3165 82.7027 42.729 82.8736 43.0331 83.1777C43.3372 83.4818 43.508 83.8942 43.508 84.3243C43.508 84.7544 43.3372 85.1669 43.0331 85.471C42.729 85.7751 42.3165 85.9459 41.8864 85.9459Z" fill="#909090"/>
+                                                            <path d="M115.135 85.9459H78.1138C77.6837 85.9459 77.2713 85.7751 76.9672 85.471C76.663 85.1669 76.4922 84.7544 76.4922 84.3243C76.4922 83.8942 76.663 83.4818 76.9672 83.1777C77.2713 82.8736 77.6837 82.7027 78.1138 82.7027H113.514V53.5135H78.1138C77.6837 53.5135 77.2713 53.3427 76.9672 53.0385C76.663 52.7344 76.4922 52.322 76.4922 51.8919C76.4922 51.4618 76.663 51.0493 76.9672 50.7452C77.2713 50.4411 77.6837 50.2703 78.1138 50.2703H115.135C115.566 50.2703 115.978 50.4411 116.282 50.7452C116.586 51.0493 116.757 51.4618 116.757 51.8919V84.3243C116.757 84.7544 116.586 85.1669 116.282 85.471C115.978 85.7751 115.566 85.9459 115.135 85.9459Z" fill="#909090"/>
+                                                            <path d="M59.9997 94.054C54.868 94.054 49.8517 92.5323 45.5849 89.6813C41.3181 86.8304 37.9925 82.7782 36.0287 78.0372C34.065 73.2962 33.5511 68.0793 34.5523 63.0463C35.5534 58.0132 38.0245 53.3901 41.6531 49.7615C45.2817 46.1329 49.9048 43.6618 54.9379 42.6607C59.9709 41.6595 65.1878 42.1734 69.9288 44.1371C74.6698 46.1009 78.722 49.4265 81.5729 53.6933C84.4239 57.9601 85.9456 62.9764 85.9456 68.1081C85.9379 74.987 83.2018 81.582 78.3377 86.4461C73.4736 91.3102 66.8786 94.0463 59.9997 94.054ZM59.9997 45.4054C55.5095 45.4054 51.1202 46.7369 47.3867 49.2315C43.6533 51.7261 40.7434 55.2717 39.0251 59.4201C37.3068 63.5685 36.8572 68.1333 37.7332 72.5371C38.6092 76.941 40.7714 80.9863 43.9464 84.1613C47.1215 87.3363 51.1667 89.4986 55.5706 90.3745C59.9745 91.2505 64.5392 90.8009 68.6876 89.0826C72.836 87.3643 76.3817 84.4545 78.8763 80.721C81.3709 76.9876 82.7024 72.5982 82.7024 68.1081C82.6955 62.089 80.3014 56.3185 76.0453 52.0624C71.7892 47.8063 66.0187 45.4122 59.9997 45.4054Z" fill="#909090"/>
+                                                            <path d="M60 85.9459C56.472 85.9459 53.0232 84.8998 50.0898 82.9397C47.1564 80.9797 44.87 78.1938 43.5199 74.9344C42.1698 71.6749 41.8166 68.0883 42.5049 64.6281C43.1931 61.1679 44.892 57.9895 47.3867 55.4949C49.8814 53.0002 53.0598 51.3013 56.52 50.613C59.9802 49.9247 63.5668 50.278 66.8262 51.6281C70.0856 52.9782 72.8715 55.2645 74.8316 58.1979C76.7916 61.1314 77.8378 64.5801 77.8378 68.1081C77.8326 72.8374 75.9516 77.3715 72.6075 80.7157C69.2634 84.0598 64.7293 85.9408 60 85.9459ZM60 53.5135C57.1134 53.5135 54.2917 54.3695 51.8916 55.9731C49.4916 57.5768 47.6209 59.8562 46.5163 62.523C45.4117 65.1898 45.1227 68.1243 45.6858 70.9554C46.2489 73.7864 47.6389 76.387 49.68 78.428C51.7211 80.4691 54.3216 81.8591 57.1527 82.4223C59.9838 82.9854 62.9182 82.6964 65.5851 81.5918C68.2519 80.4871 70.5312 78.6165 72.1349 76.2164C73.7386 73.8164 74.5945 70.9946 74.5945 68.1081C74.5903 64.2387 73.0512 60.529 70.3152 57.7929C67.5791 55.0568 63.8694 53.5178 60 53.5135Z" fill="#909090"/>
+                                                            <path d="M59.9885 79.4594C59.6202 79.4596 59.2627 79.3343 58.975 79.1043C58.0912 78.3956 50.335 72.0291 50.2701 66.6081C50.2582 65.7262 50.4202 64.8507 50.7468 64.0315C51.0735 63.2124 51.5585 62.4656 52.1739 61.834C53.1891 60.8219 54.5268 60.1976 55.9545 60.0697C57.3822 59.9417 58.8096 60.3181 59.9885 61.1335C61.2402 60.2903 62.7531 59.9246 64.2517 60.1032C65.7503 60.2818 67.1349 60.9927 68.1534 62.1064C68.7251 62.7267 69.1585 63.4614 69.4249 64.2618C69.6913 65.0621 69.7847 65.91 69.6988 66.7491C69.1004 72.5513 61.821 78.4508 60.9923 79.1059C60.707 79.3333 60.3534 79.4578 59.9885 79.4594ZM56.4988 63.2432C56.1215 63.2465 55.7486 63.3253 55.4022 63.4748C55.0557 63.6244 54.7427 63.8417 54.4815 64.114C54.1658 64.4391 53.9173 64.8233 53.7504 65.2446C53.5834 65.6659 53.5012 66.116 53.5085 66.5691C53.5393 69.1799 57.1588 73.2291 59.9837 75.7183C62.301 73.667 66.1345 69.6535 66.4702 66.4232C66.5072 66.0357 66.4617 65.6448 66.3368 65.2761C66.2119 64.9074 66.0103 64.5694 65.7453 64.2843C65.4604 63.9679 65.1108 63.7164 64.7203 63.5467C64.3298 63.3771 63.9074 63.2933 63.4817 63.301C63.056 63.3087 62.6369 63.4077 62.2527 63.5913C61.8686 63.7749 61.5283 64.0389 61.255 64.3654C61.1032 64.556 60.9103 64.71 60.6908 64.8158C60.4712 64.9217 60.2306 64.9767 59.9869 64.9767C59.7436 64.9766 59.5034 64.9217 59.2842 64.8162C59.0649 64.7106 58.8723 64.5571 58.7204 64.367C58.4606 64.0224 58.1252 63.7419 57.7401 63.5471C57.355 63.3523 56.9303 63.2484 56.4988 63.2432Z" fill="#909090"/>
+                                                            <path d="M68.6483 30.8109H51.3521C50.922 30.8109 50.5095 30.64 50.2054 30.3359C49.9013 30.0318 49.7305 29.6193 49.7305 29.1892C49.7305 28.7592 49.9013 28.3467 50.2054 28.0426C50.5095 27.7385 50.922 27.5676 51.3521 27.5676H68.6483C69.0784 27.5676 69.4908 27.7385 69.795 28.0426C70.0991 28.3467 70.2699 28.7592 70.2699 29.1892C70.2699 29.6193 70.0991 30.0318 69.795 30.3359C69.4908 30.64 69.0784 30.8109 68.6483 30.8109Z" fill="#909090"/>
+                                                            <g clip-path="url(#clip0)">
+                                                            <path d="M25.4993 130L17.7496 150.455L10 130H16.1848L17.8241 136.075L19.6125 130H25.4993Z" fill="#919191"/>
+                                                            <path d="M32.802 134.921C34.6649 134.921 36.2297 135.613 37.571 137.074C38.9123 138.536 39.5829 140.227 39.5829 142.227C39.5829 144.303 38.9123 145.995 37.571 147.456C36.2297 148.917 34.5904 149.609 32.7275 149.609C30.8646 149.609 29.2253 148.917 27.884 147.456C26.5427 145.995 25.8721 144.303 25.8721 142.227C25.8721 140.15 26.5427 138.382 27.884 136.998C29.2253 135.613 30.7901 134.921 32.802 134.921ZM32.653 140.15C32.1314 140.15 31.6843 140.381 31.3117 140.766C30.9391 141.15 30.7901 141.688 30.7901 142.303C30.7901 142.919 30.9391 143.38 31.3117 143.841C31.6843 144.303 32.1314 144.457 32.653 144.457C33.1746 144.457 33.6217 144.226 33.9943 143.841C34.3669 143.457 34.5159 142.919 34.5159 142.303C34.5159 141.688 34.3669 141.227 33.9943 140.766C33.6217 140.304 33.1746 140.15 32.653 140.15Z" fill="#919191"/>
+                                                            <path d="M48.0774 134.921C49.9403 134.921 51.5051 135.613 52.8464 137.074C54.1877 138.536 54.8583 140.227 54.8583 142.227C54.8583 144.303 54.1877 145.995 52.8464 147.456C51.5051 148.917 49.8658 149.609 48.0029 149.609C46.14 149.609 44.5007 148.917 43.1594 147.456C41.8181 145.995 41.1475 144.303 41.1475 142.227C41.1475 140.15 41.8181 138.382 43.1594 136.998C44.5007 135.613 46.0655 134.921 48.0774 134.921ZM47.9284 140.15C47.4068 140.15 46.9597 140.381 46.5871 140.766C46.2145 141.15 46.0655 141.688 46.0655 142.303C46.0655 142.919 46.2145 143.38 46.5871 143.841C46.9597 144.303 47.4068 144.457 47.9284 144.457C48.45 144.457 48.8971 144.226 49.2697 143.841C49.6422 143.457 49.7913 142.919 49.7913 142.303C49.7913 141.688 49.6422 141.227 49.2697 140.766C48.8971 140.304 48.45 140.15 47.9284 140.15Z" fill="#919191"/>
+                                                            <path d="M60.7449 142.996C61.5646 142.996 62.3097 143.303 62.9804 143.995C63.5765 144.687 63.8745 145.456 63.8745 146.379C63.8745 147.302 63.5765 148.071 62.9804 148.763C62.3842 149.455 61.6391 149.763 60.7449 149.763C59.8507 149.763 59.1055 149.455 58.5094 148.84C57.9133 148.225 57.6152 147.379 57.6152 146.456C57.6152 145.533 57.9133 144.687 58.5094 144.072C59.1801 143.38 59.8507 142.996 60.7449 142.996Z" fill="#C4C4C4"/>
+                                                            <path d="M80.7151 130L72.9654 150.455L65.2158 130H71.4006L73.04 136.075L74.8283 130H80.7151Z" fill="#919191"/>
+                                                            <path d="M88.0178 134.921C89.8807 134.921 91.4456 135.613 92.7868 137.074C94.1281 138.536 94.7988 140.227 94.7988 142.227C94.7988 144.303 94.1281 145.995 92.7868 147.456C91.4456 148.917 89.8062 149.609 87.9433 149.609C86.0804 149.609 84.4411 148.917 83.0998 147.456C81.7585 145.995 81.0879 144.303 81.0879 142.227C81.0879 140.15 81.7585 138.382 83.0998 136.998C84.4411 135.613 86.0059 134.921 88.0178 134.921ZM87.8688 140.15C87.3472 140.15 86.9001 140.381 86.5275 140.766C86.155 141.15 86.0059 141.688 86.0059 142.303C86.0059 142.919 86.155 143.38 86.5275 143.841C86.9001 144.303 87.3472 144.457 87.8688 144.457C88.3904 144.457 88.8375 144.226 89.2101 143.841C89.5827 143.457 89.7317 142.919 89.7317 142.303C89.7317 141.688 89.5827 141.227 89.2101 140.766C88.8375 140.304 88.3904 140.15 87.8688 140.15Z" fill="#919191"/>
+                                                            <path d="M103.293 134.921C105.156 134.921 106.721 135.613 108.062 137.074C109.404 138.536 110.074 140.227 110.074 142.227C110.074 144.303 109.404 145.995 108.062 147.456C106.721 148.917 105.082 149.609 103.219 149.609C101.356 149.609 99.7165 148.917 98.3752 147.456C97.0339 145.995 96.3633 144.303 96.3633 142.227C96.3633 140.15 97.0339 138.382 98.3752 136.998C99.7165 135.613 101.281 134.921 103.293 134.921ZM103.144 140.15C102.623 140.15 102.175 140.381 101.803 140.766C101.43 141.15 101.281 141.688 101.281 142.303C101.281 142.919 101.43 143.38 101.803 143.841C102.175 144.303 102.623 144.457 103.144 144.457C103.666 144.457 104.113 144.226 104.485 143.841C104.858 143.457 105.007 142.919 105.007 142.303C105.007 141.688 104.858 141.227 104.485 140.766C104.113 140.304 103.666 140.15 103.144 140.15Z" fill="#919191"/>
+                                                            </g>
+                                                            <defs>
+                                                            <clipPath id="clip0">
+                                                            <rect width="100" height="20.4545" fill="white" transform="translate(10 130)"/>
+                                                            </clipPath>
+                                                            </defs>
+                                                            </svg>
+                                                    </div>
+                                                    <div class="text-muted">IMG_5846</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Plug Photo Tab -->
+                                        <div class="tab-pane fade" id="plug" role="tabpanel" aria-labelledby="plug-tab">...</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- characteristics Tab End -->
+                        <!-- Options Tab -->
+                        <div class="tab-pane fade" id="options" role="tabpanel" aria-labelledby="options-tab">
+                            <ul class="nav fw-medium border-bottom" id="myTab" role="tablist">
+                                <li role="presentation">
+                                    <button class="btn btn-3 active" id="common-group" data-bs-toggle="tab" data-bs-target="#common" type="button" role="tab" aria-controls="common" aria-selected="true">Общие</button>
+                                </li>
+                                <li role="presentation">
+                                    <button class="btn btn-3" id="second-group" data-bs-toggle="tab" data-bs-target="#second" type="button" role="tab" aria-controls="second" aria-selected="false">Вторая группа</button>
+                                </li>
+                                <button type="button" class="btn btn-gray pe-5 order-1" data-bs-toggle="modal" data-bs-target="#addGroupModal">Добавить группу</button>
+                            </ul>
+                            <div class="tab-content" id="myTabContent">
+                                <div class="tab-pane fade show active" id="common" role="tabpanel">
+                                    <div class="row row-cols-2 pt-3 pb-2 border-bottom">
+                                        <div>
+                                            <span class="text-muted fs-4.4 me-3">Название параметра</span>
+                                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addOptionModal">Добавить</button>
+                                        </div>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div>
+                                                <span class="text-muted fs-4.4 me-3">Значение параметра</span>
+                                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addOptionValueModal">Добавить</button>
+                                            </div>
+                                            <button class="btn btn-link p-1 btn-search"></button>
+                                        </div>
+                                    </div>
+                                    <div class="row row-cols-2 gx-0 fs-4.4">
+                                        <ul class="nav nav-tabs-3 flex-column flex-nowrap fw-medium overflow-auto" id="myTab" role="tablist" style="height: 33rem;">
+                                            <li class="nav-item-3" role="presentation">
+                                                <button class="nav-link-3 active p-3 border" id="option-1-tab" data-bs-toggle="tab" data-bs-target="#option-1" type="button" role="tab" aria-controls="option-1" aria-selected="true">Диагональ</button>
+                                            </li>
+                                            <li class="nav-item-3" role="presentation">
+                                                <button class="nav-link-3 p-3 border" id="option-2-tab" data-bs-toggle="tab" data-bs-target="#option-2" type="button" role="tab" aria-controls="option-2" aria-selected="false">Память</button>
+                                            </li>
+                                        </ul>
+                                        <div class="tab-content" id="myTabContent">
+                                            <div class="tab-pane fade show active overflow-auto" id="option-1" role="tabpanel" aria-labelledby="option-1" style="height: 33rem;">
+                                                <div class="border p-3">27 дюймов</div>
+                                                <div class="border p-3">54 дюймов</div>
+                                                <div class="border p-3">27 дюймов</div>
+                                                <div class="border p-3">54 дюймов</div>
+                                                <div class="border p-3">27 дюймов</div>
+                                                <div class="border p-3">54 дюймов</div>
+                                            </div>
+                                            <div class="tab-pane fade overflow-auto" id="option-2" role="tabpanel" aria-labelledby="option-2" style="height: 33rem;">
+                                                <div class="border p-3">16гБ</div>
+                                                <div class="border p-3">16гБ</div>
+                                                <div class="border p-3">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veniam deserunt officia, voluptate nobis possimus reprehenderit iusto, aliquam necessitatibus molestiae pariatur ipsam vitae incidunt magni, earum assumenda!
+                                                    Deleniti optio minus eius?</div>
+                                                <div class="border p-3">16гБ</div>
+                                                <div class="border p-3">16гБ</div>
+                                                <div class="border p-3">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veniam deserunt officia, voluptate nobis possimus reprehenderit iusto, aliquam necessitatibus molestiae pariatur ipsam vitae incidunt magni, earum assumenda!
+                                                    Deleniti optio minus eius?</div>
+                                                <div class="border p-3">16гБ</div>
+                                                <div class="border p-3">16гБ</div>
+                                                <div class="border p-3">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veniam deserunt officia, voluptate nobis possimus reprehenderit iusto, aliquam necessitatibus molestiae pariatur ipsam vitae incidunt magni, earum assumenda!
+                                                    Deleniti optio minus eius?</div>
+                                                <div class="border p-3">16гБ</div>
+                                                <div class="border p-3">16гБ</div>
+                                                <div class="border p-3">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veniam deserunt officia, voluptate nobis possimus reprehenderit iusto, aliquam necessitatibus molestiae pariatur ipsam vitae incidunt magni, earum assumenda!
+                                                    Deleniti optio minus eius?</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="second" role="tabpanel">
+                                    <div class="row row-cols-2 pt-3 pb-2 border-bottom">
+                                        <div>
+                                            <span class="text-muted fs-4.4 me-3">Название параметра</span>
+                                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addOptionModal">Добавить</button>
+                                        </div>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div>
+                                                <span class="text-muted fs-4.4 me-3">Значение параметра</span>
+                                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addOptionValueModal">Добавить</button>
+                                            </div>
+                                            <button class="btn btn-link p-1 btn-search"></button>
+                                        </div>
+                                    </div>
+                                    <div class="row row-cols-2 gx-0 fs-4.4">
+                                        <ul class="nav nav-tabs-3 flex-column fw-medium" id="myTab" role="tablist">
+                                            <li class="nav-item-3" role="presentation">
+                                                <button class="nav-link-3 active p-3 border" id="option-3-tab" data-bs-toggle="tab" data-bs-target="#option-3" type="button" role="tab" aria-controls="option-3" aria-selected="true">Цвет</button>
+                                            </li>
+                                            <li class="nav-item-3" role="presentation">
+                                                <button class="nav-link-3 p-3 border" id="option-4-tab" data-bs-toggle="tab" data-bs-target="#option-4" type="button" role="tab" aria-controls="option-4" aria-selected="false">Размер</button>
+                                            </li>
+                                        </ul>
+                                        <div class="tab-content" id="myTabContent">
+                                            <div class="tab-pane fade show active" id="option-3" role="tabpanel" aria-labelledby="option-3">
+                                                <div class="border p-3">зеленый</div>
+                                                <div class="border p-3">54 дюймов</div>
+                                                <div class="border p-3">27 дюймов</div>
+                                            </div>
+                                            <div class="tab-pane fade" id="option-4" role="tabpanel" aria-labelledby="option-4">
+                                                <div class="border p-3">16гБ</div>
+                                                <div class="border p-3">16гБ</div>
+                                                <div class="border p-3">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veniam deserunt officia, voluptate nobis possimus reprehenderit iusto, aliquam necessitatibus molestiae pariatur ipsam vitae incidunt magni, earum assumenda!
+                                                    Deleniti optio minus eius?</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Options Tab End -->
+                        <!-- SEO Tab -->
+                        <div class="tab-pane fade" id="seo" role="tabpanel" aria-labelledby="seo-tab">
+                            <div class="overflow-auto px-3" style="height: 40rem;">
+                                <div class="col-6">
+                                    <!-- Title -->
+                                    <div class="mb-5">
+                                        <label for="titleTextarea" class="form-label position-relative">
+                                            <span class="fs-4">Title</span>
+                                            <svg class="position-absolute" width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <circle cx="6" cy="6" r="6" fill="#3B2FFF"/>
+                                                        <path d="M6.02238 2.3C6.46905 2.3 6.86572 2.37 7.21238 2.51C7.55905 2.64333 7.83238 2.84 8.03238 3.1C8.23238 3.36 8.33238 3.67333 8.33238 4.04C8.33238 4.44 8.24572 4.77 8.07238 5.03C7.90572 5.29 7.67905 5.49 7.39238 5.63C7.10572 5.77 6.78905 5.85667 6.44238 5.89L6.41238 6.9H5.38238V5.39C6.03572 5.31 6.49905 5.17667 6.77238 4.99C7.05238 4.79667 7.19238 4.52667 7.19238 4.18C7.19238 3.89333 7.08905 3.66667 6.88238 3.5C6.68238 3.32667 6.37238 3.24 5.95238 3.24C5.55905 3.24 5.23905 3.35 4.99238 3.57C4.74572 3.79 4.59905 4.09667 4.55238 4.49L3.56238 4.04C3.67572 3.52667 3.93905 3.11 4.35238 2.79C4.77238 2.46333 5.32905 2.3 6.02238 2.3ZM5.90238 7.67C6.12905 7.67 6.30905 7.73667 6.44238 7.87C6.57572 7.99667 6.64238 8.16667 6.64238 8.38C6.64238 8.6 6.57572 8.77333 6.44238 8.9C6.30905 9.02667 6.12905 9.09 5.90238 9.09C5.66905 9.09 5.48572 9.02667 5.35238 8.9C5.21905 8.77333 5.15238 8.6 5.15238 8.38C5.15238 8.16667 5.21905 7.99667 5.35238 7.87C5.48572 7.73667 5.66905 7.67 5.90238 7.67Z" fill="white"/>
+                                            </svg>
+                                            <div class="bg-white shadow small position-absolute hint">
+                                                <div class="small text-muted p-3" style="width: 14rem;">
+                                                    <div class="small">Остались вопросы? Выберите свой вопрос, выберите свой вопрос, выберите свой вопрос, выберите свой вопрос, выберите свой вопрос</div>
+                                                </div>
+                                            </div>
+                                        </label>
+                                        <div class="d-flex mb-2 text-muted">
+                                            <label for="titleSwitch">Шаблон</label>
+                                            <div class="form-check form-switch ps-0 mx-4">
+                                                <input class="form-check-input m-0" type="checkbox" id="titleSwitch">
+                                            </div>
+                                            <label for="titleSwitch">Вручную</label>
+                                        </div>
+                                        <textarea class="form-control" id="titleTextarea" rows="3"></textarea>
+                                    </div>
+                                    <!-- Description -->
+                                    <div class="mb-5">
+                                        <label for="descTextarea" class="form-label fs-4">Description</label>
+                                        <div class="d-flex mb-2 text-muted">
+                                            <label for="descSwitch">Шаблон</label>
+                                            <div class="form-check form-switch ps-0 mx-4">
+                                                <input class="form-check-input m-0" type="checkbox" id="descSwitch">
+                                            </div>
+                                            <label for="descSwitch">Вручную</label>
+                                        </div>
+                                        <textarea class="form-control" id="descTextarea" rows="3"></textarea>
+                                    </div>
+                                    <!-- Keywords -->
+                                    <div class="mb-5">
+                                        <label for="keywordsTextarea" class="form-label fs-4">Keywords</label>
+                                        <div class="d-flex mb-2 text-muted">
+                                            <label for="keywordsSwitch">Шаблон</label>
+                                            <div class="form-check form-switch ps-0 mx-4">
+                                                <input class="form-check-input m-0" type="checkbox" id="keywordsSwitch">
+                                            </div>
+                                            <label for="keywordsSwitch">Вручную</label>
+                                        </div>
+                                        <textarea class="form-control" id="keywordsTextarea" rows="3"></textarea>
+                                    </div>
+                                    <!-- URL -->
+                                    <div class="mb-5">
+                                        <label for="urlTextarea" class="form-label fs-4">URL</label>
+                                        <div class="d-flex mb-2 text-muted">
+                                            <label for="urlSwitch">Шаблон</label>
+                                            <div class="form-check form-switch ps-0 mx-4">
+                                                <input class="form-check-input m-0" type="checkbox" id="urlSwitch">
+                                            </div>
+                                            <label for="urlSwitch">Вручную</label>
+                                        </div>
+                                        <textarea class="form-control" id="urlTextarea" rows="3"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- SEO end -->
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Add Group Modal -->
+    <div class="modal fade" id="addGroupModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="addGroupModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title fs-4.4" id="addGroupModalLabel">Добавить группу</h5>
+                </div>
+                <div class="modal-body d-flex align-items-baseline justify-content-center p-5">
+                    <label class="w-25 fs-4.4" for="addgroup">Добавить группу</label>
+                    <input class="form-control w-75" type="text" name="" id="addgroup">
+                </div>
+                <div class="modal-footer pb-4">
+                    <button type="button" class="btn btn-primary me-4">Сохранить</button>
+                    <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal">Отменить</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Option Modal -->
+    <div class="modal fade" id="addOptionModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="addOptionModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title fs-4.4" id="addOptionModalLabel">Добавить параметр</h5>
+                </div>
+                <div class="modal-body d-flex flex-column align-items-end p-5">
+                    <div class="d-flex align-items-center">
+                        <label class="fs-4.4 me-5" for="addgroup">Добавить параметр</label>
+                        <input class="form-control" type="text" name="" id="addgroup">
+                    </div>
+                </div>
+                <div class="modal-footer pb-4">
+                    <button type="button" class="btn btn-primary me-3">Сохранить</button>
+                    <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal">Отменить</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Option Values Modal -->
+    <div class="modal fade" id="addOptionValueModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="addOptionValueModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title fs-4.4" id="addOptionValueModalLabel">Добавить значение</h5>
+                </div>
+                <div class="modal-body d-flex flex-column align-items-end p-5">
+                    <div class="d-flex align-items-center">
+                        <label class="fs-4.4 me-5" for="addgroup">Добавить значение</label>
+                        <input class="form-control" type="text" name="" id="addgroup">
+                        <button class="btn btn-link btn-show p-1 ms-3"></button>
+                    </div>
+                    <div class="d-flex align-items-center mt-4">
+                        <input class="form-control" type="text" name="" id="addgroup">
+                        <button class="btn btn-link btn-delete-3 p-1 ms-3"></button>
+                    </div>
+                </div>
+                <div class="modal-footer pb-4">
+                    <button type="button" class="btn btn-primary me-3">Сохранить</button>
+                    <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal">Отменить</button>
+                    <button type="button" class="btn btn-outline-primary ms-3">Добавить несколько</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/bootstrap.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/custom-forms.js"></script>
+</body>
+</html>

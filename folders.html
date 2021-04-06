@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <title>Папки Admin</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/extra.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+
+<body class="position-relative photos-page">
+    <!-- left nav -->
+    <nav class="navigation position-fixed shadow-sm bg-white top-0 bottom-0 start-0 overflow-auto-hidden">
+        <a href="index.html" class="my-4 d-block text-center">
+            <img src="img/images/logo.svg" width="88" height="18" alt="Voo Voo Логотип">
+        </a>
+        <div class="nav-item mx-auto">
+            <div class="nav-link active text-center px-0">
+                <img class="rounded-circle user mx-auto" src="img/images/user.jpg" alt="Пользователь">
+            </div>
+        </div>
+        <div>
+            <div class="nav-item">
+                <a class="nav-link" href="index.html">
+                    <img class="nav-icon" src="img/icons/icon1.svg">
+                    <span>Структура сайта</span>
+                </a>
+            </div>
+            <div class="nav-item">
+                <a class="nav-link" href="edit.html">
+                    <img class="nav-icon" src="img/icons/icon2.svg">
+                    <span>Каталог</span>
+                </a>
+            </div>
+            <div class="nav-item">
+                <a class="nav-link" href="items.html">
+                    <img class="nav-icon" src="img/icons/icon3.svg">
+                    <span>Товары</span>
+                </a>
+            </div>
+            <div class="nav-item">
+                <a class="nav-link" href="photos.html">
+                    <img class="nav-icon" src="img/icons/icon4.svg">
+                    <span>Фильтрация</span>
+                </a>
+            </div>
+            <div class="nav-item">
+                <a class="nav-link" href="promo.html">
+                    <img class="nav-icon" src="img/icons/icon5.svg">
+                    <span>Квиз</span>
+                </a>
+            </div>
+            <div class="nav-item">
+                <a class="nav-link" href="#">
+                    <img class="nav-icon" src="img/icons/icon6.svg">
+                    <span>Новости</span>
+                </a>
+            </div>
+            <div class="nav-item">
+                <a class="nav-link" href="#">
+                    <img class="nav-icon" src="img/icons/icon7.svg">
+                    <span>Отзывы</span>
+                </a>
+            </div>
+            <div class="nav-item">
+                <a class="nav-link" href="#">
+                    <img class="nav-icon" src="img/icons/icon8.svg">
+                    <span>Вакансии</span>
+                </a>
+            </div>
+            <div class="nav-item">
+                <a class="nav-link" href="#">
+                    <img class="nav-icon" src="img/icons/icon9.svg">
+                    <span>Сотрудники</span>
+                </a>
+            </div>
+            <div class="nav-item">
+                <a class="nav-link" href="#">
+                    <img class="nav-icon" src="img/icons/icon10.svg">
+                    <span>Домен и хостинг</span>
+                </a>
+            </div>
+            <div class="nav-item">
+                <a class="nav-link" href="#">
+                    <img class="nav-icon" src="img/icons/icon11.svg">
+                    <span>Настройки</span>
+                </a>
+            </div>
+            <div class="nav-item">
+                <a class="nav-link" href="#">
+                    <img class="nav-icon" src="img/icons/icon12.svg">
+                    <span>Выйти</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="main-area position-relative">
+        <!-- top nav -->
+        <nav class="nav-top bg-white shadow w-100 d-flex align-items-center px-5">
+            <div class="d-inline-block" style="width: 19rem;">
+                <input class="form-control ps-5 col-3 form-search" list="datalistOptions" id="exampleDataList" placeholder="Поиск...">
+                <datalist id="datalistOptions">
+                    <option value="San Francisco">
+                    <option value="New York">
+                    <option value="Seattle">
+                </datalist>
+            </div>
+            <button class="btn btn-link btn-filter p-0 ms-5"></button>
+            <button class="btn btn-primary ms-auto">Сохранить</button>
+        </nav>
+
+        <main class="d-flex px-5 py-4">
+            <section class="content bg-white p-5">
+                <div class="row row-cols-6 align-content-start g-5 overflow-auto">
+                    <div>
+                        <div class="position-relative">
+                            <input class="form-check-input end-0 top-0 mt-3 me-3 position-absolute" type="checkbox" style="width: 1.125rem; height: 1.125rem;">
+                            <div class="border mb-3 position-relative folder" style="height: 12.5rem;">
+                                <button class="btn bg-white border btn-delete btn-del-4 p-2 position-absolute end-0 bottom-0 me-2 mb-2"></button>
+                            </div>
+                            <a href="photos.html" class="fw-medium">banners</a>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="position-relative">
+                            <input class="form-check-input end-0 top-0 mt-3 me-3 position-absolute" type="checkbox" style="width: 1.125rem; height: 1.125rem;">
+                            <div class="border mb-3 position-relative folder" style="height: 12.5rem;">
+                                <button class="btn bg-white border btn-delete btn-del-4 p-2 position-absolute end-0 bottom-0 me-2 mb-2"></button>
+                            </div>
+                            <a href="photos.html" class="fw-medium">icons</a>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="position-relative">
+                            <input class="form-check-input end-0 top-0 mt-3 me-3 position-absolute" type="checkbox" style="width: 1.125rem; height: 1.125rem;">
+                            <div class="border mb-3 position-relative folder" style="height: 12.5rem;">
+                                <button class="btn bg-white border btn-delete btn-del-4 p-2 position-absolute end-0 bottom-0 me-2 mb-2"></button>
+                            </div>
+                            <a href="photos.html" class="fw-medium">collages</a>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="position-relative">
+                            <input class="form-check-input end-0 top-0 mt-3 me-3 position-absolute" type="checkbox" style="width: 1.125rem; height: 1.125rem;">
+                            <div class="border mb-3 position-relative folder" style="height: 12.5rem;">
+                                <button class="btn bg-white border btn-delete btn-del-4 p-2 position-absolute end-0 bottom-0 me-2 mb-2"></button>
+                            </div>
+                            <a href="photos.html" class="fw-medium">pictures</a>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="position-relative">
+                            <input class="form-check-input end-0 top-0 mt-3 me-3 position-absolute" type="checkbox" style="width: 1.125rem; height: 1.125rem;">
+                            <div class="border mb-3 position-relative folder" style="height: 12.5rem;">
+                                <button class="btn bg-white border btn-delete btn-del-4 p-2 position-absolute end-0 bottom-0 me-2 mb-2"></button>
+                            </div>
+                            <a href="photos.html" class="fw-medium">banners</a>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="position-relative">
+                            <input class="form-check-input end-0 top-0 mt-3 me-3 position-absolute" type="checkbox" style="width: 1.125rem; height: 1.125rem;">
+                            <div class="border mb-3 position-relative folder" style="height: 12.5rem;">
+                                <button class="btn bg-white border btn-delete btn-del-4 p-2 position-absolute end-0 bottom-0 me-2 mb-2"></button>
+                            </div>
+                            <a href="photos.html" class="fw-medium">icons</a>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="position-relative">
+                            <input class="form-check-input end-0 top-0 mt-3 me-3 position-absolute" type="checkbox" style="width: 1.125rem; height: 1.125rem;">
+                            <div class="border mb-3 position-relative folder" style="height: 12.5rem;">
+                                <button class="btn bg-white border btn-delete btn-del-4 p-2 position-absolute end-0 bottom-0 me-2 mb-2"></button>
+                            </div>
+                            <a href="photos.html" class="fw-medium">collages</a>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="position-relative">
+                            <input class="form-check-input end-0 top-0 mt-3 me-3 position-absolute" type="checkbox" style="width: 1.125rem; height: 1.125rem;">
+                            <div class="border mb-3 position-relative folder" style="height: 12.5rem;">
+                                <button class="btn bg-white border btn-delete btn-del-4 p-2 position-absolute end-0 bottom-0 me-2 mb-2"></button>
+                            </div>
+                            <a href="photos.html" class="fw-medium">pictures</a>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="position-relative">
+                            <input class="form-check-input end-0 top-0 mt-3 me-3 position-absolute" type="checkbox" style="width: 1.125rem; height: 1.125rem;">
+                            <div class="border mb-3 position-relative folder" style="height: 12.5rem;">
+                                <button class="btn bg-white border btn-delete btn-del-4 p-2 position-absolute end-0 bottom-0 me-2 mb-2"></button>
+                            </div>
+                            <a href="photos.html" class="fw-medium">banners</a>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="position-relative">
+                            <input class="form-check-input end-0 top-0 mt-3 me-3 position-absolute" type="checkbox" style="width: 1.125rem; height: 1.125rem;">
+                            <div class="border mb-3 position-relative folder" style="height: 12.5rem;">
+                                <button class="btn bg-white border btn-delete btn-del-4 p-2 position-absolute end-0 bottom-0 me-2 mb-2"></button>
+                            </div>
+                            <a href="photos.html" class="fw-medium">icons</a>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="position-relative">
+                            <input class="form-check-input end-0 top-0 mt-3 me-3 position-absolute" type="checkbox" style="width: 1.125rem; height: 1.125rem;">
+                            <div class="border mb-3 position-relative folder" style="height: 12.5rem;">
+                                <button class="btn bg-white border btn-delete btn-del-4 p-2 position-absolute end-0 bottom-0 me-2 mb-2"></button>
+                            </div>
+                            <a href="photos.html" class="fw-medium">collages</a>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="position-relative">
+                            <input class="form-check-input end-0 top-0 mt-3 me-3 position-absolute" type="checkbox" style="width: 1.125rem; height: 1.125rem;">
+                            <div class="border mb-3 position-relative folder" style="height: 12.5rem;">
+                                <button class="btn bg-white border btn-delete btn-del-4 p-2 position-absolute end-0 bottom-0 me-2 mb-2"></button>
+                            </div>
+                            <a href="photos.html" class="fw-medium">pictures</a>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="position-relative">
+                            <input class="form-check-input end-0 top-0 mt-3 me-3 position-absolute" type="checkbox" style="width: 1.125rem; height: 1.125rem;">
+                            <div class="border mb-3 position-relative folder" style="height: 12.5rem;">
+                                <button class="btn bg-white border btn-delete btn-del-4 p-2 position-absolute end-0 bottom-0 me-2 mb-2"></button>
+                            </div>
+                            <a href="photos.html" class="fw-medium">banners</a>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="position-relative">
+                            <input class="form-check-input end-0 top-0 mt-3 me-3 position-absolute" type="checkbox" style="width: 1.125rem; height: 1.125rem;">
+                            <div class="border mb-3 position-relative folder" style="height: 12.5rem;">
+                                <button class="btn bg-white border btn-delete btn-del-4 p-2 position-absolute end-0 bottom-0 me-2 mb-2"></button>
+                            </div>
+                            <a href="photos.html" class="fw-medium">icons</a>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="position-relative">
+                            <input class="form-check-input end-0 top-0 mt-3 me-3 position-absolute" type="checkbox" style="width: 1.125rem; height: 1.125rem;">
+                            <div class="border mb-3 position-relative folder" style="height: 12.5rem;">
+                                <button class="btn bg-white border btn-delete btn-del-4 p-2 position-absolute end-0 bottom-0 me-2 mb-2"></button>
+                            </div>
+                            <a href="photos.html" class="fw-medium">collages</a>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="position-relative">
+                            <input class="form-check-input end-0 top-0 mt-3 me-3 position-absolute" type="checkbox" style="width: 1.125rem; height: 1.125rem;">
+                            <div class="border mb-3 position-relative folder" style="height: 12.5rem;">
+                                <button class="btn bg-white border btn-delete btn-del-4 p-2 position-absolute end-0 bottom-0 me-2 mb-2"></button>
+                            </div>
+                            <a href="photos.html" class="fw-medium">pictures</a>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="position-relative">
+                            <input class="form-check-input end-0 top-0 mt-3 me-3 position-absolute" type="checkbox" style="width: 1.125rem; height: 1.125rem;">
+                            <div class="border mb-3 position-relative folder" style="height: 12.5rem;">
+                                <button class="btn bg-white border btn-delete btn-del-4 p-2 position-absolute end-0 bottom-0 me-2 mb-2"></button>
+                            </div>
+                            <a href="photos.html" class="fw-medium">banners</a>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="position-relative">
+                            <input class="form-check-input end-0 top-0 mt-3 me-3 position-absolute" type="checkbox" style="width: 1.125rem; height: 1.125rem;">
+                            <div class="border mb-3 position-relative folder" style="height: 12.5rem;">
+                                <button class="btn bg-white border btn-delete btn-del-4 p-2 position-absolute end-0 bottom-0 me-2 mb-2"></button>
+                            </div>
+                            <a href="photos.html" class="fw-medium">icons</a>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="position-relative">
+                            <input class="form-check-input end-0 top-0 mt-3 me-3 position-absolute" type="checkbox" style="width: 1.125rem; height: 1.125rem;">
+                            <div class="border mb-3 position-relative folder" style="height: 12.5rem;">
+                                <button class="btn bg-white border btn-delete btn-del-4 p-2 position-absolute end-0 bottom-0 me-2 mb-2"></button>
+                            </div>
+                            <a href="photos.html" class="fw-medium">collages</a>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="position-relative">
+                            <input class="form-check-input end-0 top-0 mt-3 me-3 position-absolute" type="checkbox" style="width: 1.125rem; height: 1.125rem;">
+                            <div class="border mb-3 position-relative folder" style="height: 12.5rem;">
+                                <button class="btn bg-white border btn-delete btn-del-4 p-2 position-absolute end-0 bottom-0 me-2 mb-2"></button>
+                            </div>
+                            <a href="photos.html" class="fw-medium">pictures</a>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="position-relative">
+                            <input class="form-check-input end-0 top-0 mt-3 me-3 position-absolute" type="checkbox" style="width: 1.125rem; height: 1.125rem;">
+                            <div class="border mb-3 position-relative folder" style="height: 12.5rem;">
+                                <button class="btn bg-white border btn-delete btn-del-4 p-2 position-absolute end-0 bottom-0 me-2 mb-2"></button>
+                            </div>
+                            <a href="photos.html" class="fw-medium">banners</a>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="position-relative">
+                            <input class="form-check-input end-0 top-0 mt-3 me-3 position-absolute" type="checkbox" style="width: 1.125rem; height: 1.125rem;">
+                            <div class="border mb-3 position-relative folder" style="height: 12.5rem;">
+                                <button class="btn bg-white border btn-delete btn-del-4 p-2 position-absolute end-0 bottom-0 me-2 mb-2"></button>
+                            </div>
+                            <a href="photos.html" class="fw-medium">icons</a>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="position-relative">
+                            <input class="form-check-input end-0 top-0 mt-3 me-3 position-absolute" type="checkbox" style="width: 1.125rem; height: 1.125rem;">
+                            <div class="border mb-3 position-relative folder" style="height: 12.5rem;">
+                                <button class="btn bg-white border btn-delete btn-del-4 p-2 position-absolute end-0 bottom-0 me-2 mb-2"></button>
+                            </div>
+                            <a href="photos.html" class="fw-medium">collages</a>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="position-relative">
+                            <input class="form-check-input end-0 top-0 mt-3 me-3 position-absolute" type="checkbox" style="width: 1.125rem; height: 1.125rem;">
+                            <div class="border mb-3 position-relative folder" style="height: 12.5rem;">
+                                <button class="btn bg-white border btn-delete btn-del-4 p-2 position-absolute end-0 bottom-0 me-2 mb-2"></button>
+                            </div>
+                            <a href="photos.html" class="fw-medium">pictures</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="js/bootstrap.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/custom-forms.js"></script>
+
+</body>
+
+</html>

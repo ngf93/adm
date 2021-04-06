@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <meta name="viewport" content="width=1920">
+    <title>Admin - Товары</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/extra.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+<body class="position-relative">
+    <!-- left nav -->
+    <nav class="navigation position-fixed shadow-sm bg-white top-0 bottom-0 start-0 overflow-auto-hidden">
+        <a href="index.html" class="my-4 d-block text-center">
+            <img src="img/images/logo.svg" width="88" height="18" alt="Voo Voo Логотип">
+        </a>
+        <div class="nav-item mx-auto">
+            <div class="nav-link active text-center px-0">
+                <img class="rounded-circle user mx-auto" src="img/images/user.jpg" alt="Пользователь">
+            </div>
+        </div>
+        <div>
+            <div class="nav-item">
+                <a class="nav-link" href="index.html">
+                    <img class="nav-icon" src="img/icons/icon1.svg">
+                    <span>Структура сайта</span>
+                </a>
+            </div>
+            <div class="nav-item">
+                <a class="nav-link" href="edit.html">
+                    <img class="nav-icon" src="img/icons/icon2.svg">
+                    <span>Каталог</span>
+                </a>
+            </div>
+            <div class="nav-item">
+                <a class="nav-link" href="items.html">
+                    <img class="nav-icon" src="img/icons/icon3.svg">
+                    <span>Товары</span>
+                </a>
+            </div>
+            <div class="nav-item">
+                <a class="nav-link" href="photos.html">
+                    <img class="nav-icon" src="img/icons/icon4.svg">
+                    <span>Фильтрация</span>
+                </a>
+            </div>
+            <div class="nav-item">
+                <a class="nav-link" href="promo.html">
+                    <img class="nav-icon" src="img/icons/icon5.svg">
+                    <span>Квиз</span>
+                </a>
+            </div>
+            <div class="nav-item">
+                <a class="nav-link" href="#">
+                    <img class="nav-icon" src="img/icons/icon6.svg">
+                    <span>Новости</span>
+                </a>
+            </div>
+            <div class="nav-item">
+                <a class="nav-link" href="#">
+                    <img class="nav-icon" src="img/icons/icon7.svg">
+                    <span>Отзывы</span>
+                </a>
+            </div>
+            <div class="nav-item">
+                <a class="nav-link" href="#">
+                    <img class="nav-icon" src="img/icons/icon8.svg">
+                    <span>Вакансии</span>
+                </a>
+            </div>
+            <div class="nav-item">
+                <a class="nav-link" href="#">
+                    <img class="nav-icon" src="img/icons/icon9.svg">
+                    <span>Сотрудники</span>
+                </a>
+            </div>
+            <div class="nav-item">
+                <a class="nav-link" href="#">
+                    <img class="nav-icon" src="img/icons/icon10.svg">
+                    <span>Домен и хостинг</span>
+                </a>
+            </div>
+            <div class="nav-item">
+                <a class="nav-link" href="#">
+                    <img class="nav-icon" src="img/icons/icon11.svg">
+                    <span>Настройки</span>
+                </a>
+            </div>
+            <div class="nav-item">
+                <a class="nav-link" href="#">
+                    <img class="nav-icon" src="img/icons/icon12.svg">
+                    <span>Выйти</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    
+
+    <!-- main content -->
+    <div class="main-area position-relative">
+        <!-- top nav -->
+        <nav class="nav-top bg-white shadow w-100 d-flex align-items-center px-5">
+            <input type="number" class="form-control mx-4" placeholder="от" style="width: 8.125rem;">
+            <div class="gray">
+                <svg width="30" height="1" viewBox="0 0 30 1" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <line y1="0.5" x2="30" y2="0.5" stroke="black" stroke-opacity="0.15"/>
+                </svg>                    
+            </div>
+            <input type="number" class="form-control mx-4" placeholder="до" style="width: 8.125rem;">
+            <div class="d-inline-block" style="width: 19rem;">
+                <input class="form-control ps-5 col-3 form-search" list="datalistOptions" id="exampleDataList" placeholder="Поиск...">
+                <datalist id="datalistOptions">
+                    <option value="San Francisco">
+                    <option value="New York">
+                    <option value="Seattle">
+                </datalist>
+            </div>
+            <button class="btn btn-link btn-filter p-0 ms-5"></button>
+        </nav>
+        <main class="d-flex px-5 py-4">
+            <!-- left panel -->
+            <section class="content bg-white">
+                <div class="d-flex align-items-center justify-content-between py-2 px-4 border-bottom">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb fw-bold mb-0">
+                            <li class="breadcrumb-item"><a href="#">Товары</a></li>
+                        </ol>
+                    </nav>
+                    <button class="btn btn-primary ms-5">Добавить категорию</button>
+                    <select class="form-select border-0 fs-5 w-auto">
+                        <option value="1" selected>Показывать по 20</option>
+                        <option value="2">Показывать по 30</option>
+                    </select>
+                </div>
+                <div class="px-4">
+                    <div class="items-list-head">
+                        <div class="name">Название</div>
+                        <div class="category">Категории</div>
+                        <div class="vendor-code">Артикул</div>
+                        <div class="price">Цена</div>
+                        <div class="order">Порядок</div>
+                        <div class="status">Статус</div>
+                        <div class="btns"></div>
+                    </div>
+                    <div class="items-list">
+                        <div class="item-row">
+                            <input class="form-check-input mt-3 me-3" type="checkbox" value="product_ID">
+                            <div class="item-tb">
+                                <div class="name">
+                                    <div>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quis ex asperiores beatae, hic facere optio, quisquam consectetur quo minus, suscipit fugit voluptatum quam nulla. Praesentium quae debitis in saepe at.</div>
+                                </div>
+                                <div class="category">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+                                <div class="vendor-code">1550694</div>
+                                <div class="price">250</div>
+                                <div class="order">1</div>
+                                <div class="status">Отображается</div>
+                                <div class="btns">
+                                    <button class="btn btn-edit p-1"></button>
+                                    <button class="btn btn-delete p-1"></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item-row">
+                            <input class="form-check-input mt-3 me-3" type="checkbox" value="product_ID">
+                            <div class="item-tb">
+                                <div class="name">
+                                    <div>Термостакан "Любовь согревает", 350 мл</div>
+                                </div>
+                                <div class="category">Для влюбленных</div>
+                                <div class="vendor-code">1550694</div>
+                                <div class="price">250</div>
+                                <div class="order">2</div>
+                                <div class="status">Отображается</div>
+                                <div class="btns">
+                                    <button class="btn btn-edit p-1"></button>
+                                    <button class="btn btn-delete p-1"></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item-row">
+                            <input class="form-check-input mt-3 me-3" type="checkbox" value="product_ID">
+                            <div class="item-tb">
+                                <div class="name">
+                                    <div>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quis ex asperiores beatae, hic facere optio, quisquam consectetur quo minus, suscipit fugit voluptatum quam nulla. Praesentium quae debitis in saepe at.</div>
+                                </div>
+                                <div class="category">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+                                <div class="vendor-code">1550694</div>
+                                <div class="price">250</div>
+                                <div class="order">1</div>
+                                <div class="status">Отображается</div>
+                                <div class="btns">
+                                    <button class="btn btn-edit p-1"></button>
+                                    <button class="btn btn-delete p-1"></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item-row">
+                            <input class="form-check-input mt-3 me-3" type="checkbox" value="product_ID">
+                            <div class="item-tb">
+                                <div class="name">
+                                    <div>Термостакан "Любовь согревает", 350 мл</div>
+                                </div>
+                                <div class="category">Для влюбленных</div>
+                                <div class="vendor-code">1550694</div>
+                                <div class="price">250</div>
+                                <div class="order">2</div>
+                                <div class="status">Отображается</div>
+                                <div class="btns">
+                                    <button class="btn btn-edit p-1"></button>
+                                    <button class="btn btn-delete p-1"></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item-row">
+                            <input class="form-check-input mt-3 me-3" type="checkbox" value="product_ID">
+                            <div class="item-tb">
+                                <div class="name">
+                                    <div>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quis ex asperiores beatae, hic facere optio, quisquam consectetur quo minus, suscipit fugit voluptatum quam nulla. Praesentium quae debitis in saepe at.</div>
+                                </div>
+                                <div class="category">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+                                <div class="vendor-code">1550694</div>
+                                <div class="price">250</div>
+                                <div class="order">1</div>
+                                <div class="status">Отображается</div>
+                                <div class="btns">
+                                    <button class="btn btn-edit p-1"></button>
+                                    <button class="btn btn-delete p-1"></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item-row">
+                            <input class="form-check-input mt-3 me-3" type="checkbox" value="product_ID">
+                            <div class="item-tb">
+                                <div class="name">
+                                    <div>Термостакан "Любовь согревает", 350 мл</div>
+                                </div>
+                                <div class="category">Для влюбленных</div>
+                                <div class="vendor-code">1550694</div>
+                                <div class="price">250</div>
+                                <div class="order">2</div>
+                                <div class="status">Отображается</div>
+                                <div class="btns">
+                                    <button class="btn btn-edit p-1"></button>
+                                    <button class="btn btn-delete p-1"></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item-row">
+                            <input class="form-check-input mt-3 me-3" type="checkbox" value="product_ID">
+                            <div class="item-tb">
+                                <div class="name">
+                                    <div>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quis ex asperiores beatae, hic facere optio, quisquam consectetur quo minus, suscipit fugit voluptatum quam nulla. Praesentium quae debitis in saepe at.</div>
+                                </div>
+                                <div class="category">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+                                <div class="vendor-code">1550694</div>
+                                <div class="price">250</div>
+                                <div class="order">1</div>
+                                <div class="status">Отображается</div>
+                                <div class="btns">
+                                    <button class="btn btn-edit p-1"></button>
+                                    <button class="btn btn-delete p-1"></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item-row">
+                            <input class="form-check-input mt-3 me-3" type="checkbox" value="product_ID">
+                            <div class="item-tb">
+                                <div class="name">
+                                    <div>Термостакан "Любовь согревает", 350 мл</div>
+                                </div>
+                                <div class="category">Для влюбленных</div>
+                                <div class="vendor-code">1550694</div>
+                                <div class="price">250</div>
+                                <div class="order">2</div>
+                                <div class="status">Отображается</div>
+                                <div class="btns">
+                                    <button class="btn btn-edit p-1"></button>
+                                    <button class="btn btn-delete p-1"></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item-row">
+                            <input class="form-check-input mt-3 me-3" type="checkbox" value="product_ID">
+                            <div class="item-tb">
+                                <div class="name">
+                                    <div>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quis ex asperiores beatae, hic facere optio, quisquam consectetur quo minus, suscipit fugit voluptatum quam nulla. Praesentium quae debitis in saepe at.</div>
+                                </div>
+                                <div class="category">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+                                <div class="vendor-code">1550694</div>
+                                <div class="price">250</div>
+                                <div class="order">1</div>
+                                <div class="status">Отображается</div>
+                                <div class="btns">
+                                    <button class="btn btn-edit p-1"></button>
+                                    <button class="btn btn-delete p-1"></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item-row">
+                            <input class="form-check-input mt-3 me-3" type="checkbox" value="product_ID">
+                            <div class="item-tb">
+                                <div class="name">
+                                    <div>Термостакан "Любовь согревает", 350 мл</div>
+                                </div>
+                                <div class="category">Для влюбленных</div>
+                                <div class="vendor-code">1550694</div>
+                                <div class="price">250</div>
+                                <div class="order">2</div>
+                                <div class="status">Отображается</div>
+                                <div class="btns">
+                                    <button class="btn btn-edit p-1"></button>
+                                    <button class="btn btn-delete p-1"></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item-row">
+                            <input class="form-check-input mt-3 me-3" type="checkbox" value="product_ID">
+                            <div class="item-tb">
+                                <div class="name">
+                                    <div>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quis ex asperiores beatae, hic facere optio, quisquam consectetur quo minus, suscipit fugit voluptatum quam nulla. Praesentium quae debitis in saepe at.</div>
+                                </div>
+                                <div class="category">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+                                <div class="vendor-code">1550694</div>
+                                <div class="price">250</div>
+                                <div class="order">1</div>
+                                <div class="status">Отображается</div>
+                                <div class="btns">
+                                    <button class="btn btn-edit p-1"></button>
+                                    <button class="btn btn-delete p-1"></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item-row">
+                            <input class="form-check-input mt-3 me-3" type="checkbox" value="product_ID">
+                            <div class="item-tb">
+                                <div class="name">
+                                    <div>Термостакан "Любовь согревает", 350 мл</div>
+                                </div>
+                                <div class="category">Для влюбленных</div>
+                                <div class="vendor-code">1550694</div>
+                                <div class="price">250</div>
+                                <div class="order">2</div>
+                                <div class="status">Отображается</div>
+                                <div class="btns">
+                                    <button class="btn btn-edit p-1"></button>
+                                    <button class="btn btn-delete p-1"></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item-row">
+                            <input class="form-check-input mt-3 me-3" type="checkbox" value="product_ID">
+                            <div class="item-tb">
+                                <div class="name">
+                                    <div>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quis ex asperiores beatae, hic facere optio, quisquam consectetur quo minus, suscipit fugit voluptatum quam nulla. Praesentium quae debitis in saepe at.</div>
+                                </div>
+                                <div class="category">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+                                <div class="vendor-code">1550694</div>
+                                <div class="price">250</div>
+                                <div class="order">1</div>
+                                <div class="status">Отображается</div>
+                                <div class="btns">
+                                    <button class="btn btn-edit p-1"></button>
+                                    <button class="btn btn-delete p-1"></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item-row">
+                            <input class="form-check-input mt-3 me-3" type="checkbox" value="product_ID">
+                            <div class="item-tb">
+                                <div class="name">
+                                    <div>Термостакан "Любовь согревает", 350 мл</div>
+                                </div>
+                                <div class="category">Для влюбленных</div>
+                                <div class="vendor-code">1550694</div>
+                                <div class="price">250</div>
+                                <div class="order">2</div>
+                                <div class="status">Отображается</div>
+                                <div class="btns">
+                                    <button class="btn btn-edit p-1"></button>
+                                    <button class="btn btn-delete p-1"></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item-row">
+                            <input class="form-check-input mt-3 me-3" type="checkbox" value="product_ID">
+                            <div class="item-tb">
+                                <div class="name">
+                                    <div>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quis ex asperiores beatae, hic facere optio, quisquam consectetur quo minus, suscipit fugit voluptatum quam nulla. Praesentium quae debitis in saepe at.</div>
+                                </div>
+                                <div class="category">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+                                <div class="vendor-code">1550694</div>
+                                <div class="price">250</div>
+                                <div class="order">1</div>
+                                <div class="status">Отображается</div>
+                                <div class="btns">
+                                    <button class="btn btn-edit p-1"></button>
+                                    <button class="btn btn-delete p-1"></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item-row">
+                            <input class="form-check-input mt-3 me-3" type="checkbox" value="product_ID">
+                            <div class="item-tb">
+                                <div class="name">
+                                    <div>Термостакан "Любовь согревает", 350 мл</div>
+                                </div>
+                                <div class="category">Для влюбленных</div>
+                                <div class="vendor-code">1550694</div>
+                                <div class="price">250</div>
+                                <div class="order">2</div>
+                                <div class="status">Отображается</div>
+                                <div class="btns">
+                                    <button class="btn btn-edit p-1"></button>
+                                    <button class="btn btn-delete p-1"></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item-row">
+                            <input class="form-check-input mt-3 me-3" type="checkbox" value="product_ID">
+                            <div class="item-tb">
+                                <div class="name">
+                                    <div>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quis ex asperiores beatae, hic facere optio, quisquam consectetur quo minus, suscipit fugit voluptatum quam nulla. Praesentium quae debitis in saepe at.</div>
+                                </div>
+                                <div class="category">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+                                <div class="vendor-code">1550694</div>
+                                <div class="price">250</div>
+                                <div class="order">1</div>
+                                <div class="status">Отображается</div>
+                                <div class="btns">
+                                    <button class="btn btn-edit p-1"></button>
+                                    <button class="btn btn-delete p-1"></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item-row">
+                            <input class="form-check-input mt-3 me-3" type="checkbox" value="product_ID">
+                            <div class="item-tb">
+                                <div class="name">
+                                    <div>Термостакан "Любовь согревает", 350 мл</div>
+                                </div>
+                                <div class="category">Для влюбленных</div>
+                                <div class="vendor-code">1550694</div>
+                                <div class="price">250</div>
+                                <div class="order">2</div>
+                                <div class="status">Отображается</div>
+                                <div class="btns">
+                                    <button class="btn btn-edit p-1"></button>
+                                    <button class="btn btn-delete p-1"></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- right panel -->
+            <aside class="bg-white ms-4 py-4 px-4 d-flex flex-column">
+                <div class="mb-auto">
+                    <div class="mb-3">
+                        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Название">
+                    </div>
+                    <!-- custom select single -->
+                    <div class="custom-select single mb-3">
+                        <button type="button">Не выбрано</button>
+                        <div class="cs-options search-list">
+                            <input type="search" placeholder="Поиск" class="search-in-list">
+                            <div class="radio search-item">
+                                <input type="radio" name="radio-opt" value="Для влюбленных">
+                                <label>Для влюбленных</label>
+                            </div>
+                            <div class="sublevel">
+                                <div class="radio search-item">
+                                    <input type="radio" name="radio-opt" value="Вкусные подарки Любовь">
+                                    <label>
+                                        <span class="nesting">-</span>
+                                        <span class="level-mark">2</span>
+                                        Вкусные подарки Любовь
+                                    </label>
+                                </div>
+                                <div class="radio search-item">
+                                    <input type="radio" name="radio-opt" value="Другое">
+                                    <label>
+                                        <span class="nesting">+</span>
+                                        <span class="level-mark">2</span>
+                                        Другое
+                                    </label>
+                                </div>
+                                <div class="sublevel">
+                                    <div class="radio search-item">
+                                        <input type="radio" name="radio-opt" value="Термостакан “Любовь...">
+                                        <label>
+                                            <span class="nesting">-</span>
+                                            <span class="level-mark">3</span>
+                                            Термостакан “Любовь...
+                                        </label>
+                                    </div>
+                                    <div class="radio search-item">
+                                        <input type="radio" name="radio-opt" value="Другое 2">
+                                        <label>
+                                            <span class="nesting">-</span>
+                                            <span class="level-mark">3</span>
+                                            Другое 2
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="radio search-item">
+                                <input type="radio" name="radio-opt" value="Подарочные наборы">
+                                <label>Подарочные наборы</label>
+                            </div>
+                            <div class="sublevel">
+                                <div class="radio search-item">
+                                    <input type="radio" name="radio-opt" value="Мужские наборы">
+                                    <label>
+                                        <span class="nesting">-</span>
+                                        <span class="level-mark">2</span>
+                                        Мужские наборы
+                                    </label>
+                                </div>
+                                <div class="radio search-item">
+                                    <input type="radio" name="radio-opt" value="Женские наборы">
+                                    <label>
+                                        <span class="nesting">-</span>
+                                        <span class="level-mark">2</span>
+                                        Женские наборы
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="radio search-item">
+                                <input type="radio" name="radio-opt" value="Товары 18+">
+                                <label>Товары 18+</label>
+                            </div>
+                            <div class="radio search-item">
+                                <input type="radio" name="radio-opt" value="Воздушные шары">
+                                <label>Воздушные шары</label>
+                            </div>
+                            <div class="sublevel">
+                                <div class="radio search-item">
+                                    <input type="radio" name="radio-opt" value="Латексные шары">
+                                    <label>
+                                        <span class="nesting">-</span>
+                                        <span class="level-mark">2</span>
+                                        Латексные шары
+                                    </label>
+                                </div>
+                                <div class="radio search-item">
+                                    <input type="radio" name="radio-opt" value="Фольгированные шары">
+                                    <label>
+                                        <span class="nesting">-</span>
+                                        <span class="level-mark">2</span>
+                                        Фольгированные шары
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="radio search-item">
+                                <input type="radio" name="radio-opt" value="Фотоальбомы">
+                                <label>Фотоальбомы</label>
+                            </div>
+                            <div class="sublevel">
+                                <div class="radio search-item">
+                                    <input type="radio" name="radio-opt" value="Детские фотоальбомы и фотокниги">
+                                    <label>
+                                        <span class="nesting">-</span>
+                                        <span class="level-mark">2</span>
+                                        Детские фотоальбомы и фотокниги
+                                    </label>
+                                </div>
+                                <div class="radio search-item">
+                                    <input type="radio" name="radio-opt" value="Свадебные фотоальбомы">
+                                    <label>
+                                        <span class="nesting">-</span>
+                                        <span class="level-mark">2</span>
+                                        Свадебные фотоальбомы
+                                    </label>
+                                </div>
+                                <div class="radio search-item">
+                                    <input type="radio" name="radio-opt" value="Классические фотоальбомы и фотокниги">
+                                    <label>
+                                        <span class="nesting">-</span>
+                                        <span class="level-mark">2</span>
+                                        Классические фотоальбомы и фотокниги
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="radio search-item">
+                                <input type="radio" name="radio-opt" value="Подарочная косметика">
+                                <label>Подарочная косметика</label>
+                            </div>
+                            <div class="radio search-item">
+                                <input type="radio" name="radio-opt" value="Необычные вкусные подарки">
+                                <label>Необычные вкусные подарки</label>
+                            </div>
+                        </div>
+                    </div>       
+
+                    <div class="row gx-3 align-items-center mb-3">
+                        <div class="col-5">
+                            <div class="lh_n">Акция</div>
+                        </div>
+                        <div class="col-7">
+                            <!-- custom select multy -->
+                            <div class="custom-select multy">
+                                <button type="button">Не выбрано</button>
+                                <div class="cs-options search-list">
+                                    <input type="search" placeholder="Поиск" class="search-in-list">
+                                    <div class="checkbox search-item">
+                                        <input type="checkbox" name="offer-opt" value="Акция 1">
+                                        <label>Акция 1</label>
+                                    </div>
+                                    <div class="checkbox search-item">
+                                        <input type="checkbox" name="offer-opt" value="Акция 2">
+                                        <label>Акция 2</label>
+                                    </div>
+                                    <div class="checkbox search-item">
+                                        <input type="checkbox" name="offer-opt" value="Акция 3">
+                                        <label>Акция 3</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row gx-3 align-items-center mb-3">    
+                        <div class="col-6">
+                            <div class="lh_n">Порядковый номер</div>
+                        </div>
+                        <div class="col-6">
+                            <input type="text" class="form-control text-end" placeholder="0" value="2">
+                        </div>
+                    </div>
+                    <div class="form-check form-switch mb-3 ps-0 d-flex justify-content-between">
+                        <label class="form-check-label" for="status-switch">Статус</label>
+                        <div class="d-flex align-items-center fs-6 flex-row-reverse">
+                            <input class="form-check-input m-0 float-none" type="checkbox" id="status-switch">
+                            <span class="text-muted me-4 status-state"></span>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-between">
+                        <span>Дата изменения</span>
+                        <span class="text-muted">24.02.21</span>
+                    </div>
+                </div>
+                <div class="row gx-3">
+                    <div class="col-6">
+                        <button class="btn btn-outline-primary px-3 w-100">Сохранить</button>
+                    </div>
+                    <div class="col-6">
+                        <button class="btn btn-outline-primary px-3 w-100">Посмотреть</button>
+                    </div>
+                    <div class="col-12 mt-3">
+                        <a href="cat-edit.html" class="btn btn-outline-primary w-100">Расширенное редактирование</a>
+                    </div>
+                </div>
+            </aside>
+        </main>
+        <!-- bottom nav -->
+        <footer class="px-5 bg-white shadow-lg d-flex align-items-center">
+            <div>Выбрано: 4 элемента</div>
+            <div class="d-flex align-items-center ms-5">
+                <label for="" class="form-label mb-0 me-3 text-nowrap">Перенести в</label>
+                <div class="custom-select single align-bottom f_09" style="width: 200px;">
+                    <button type="button">Не выбрано</button>
+                    <div class="cs-options search-list">
+                        <input type="search" placeholder="Поиск" class="search-in-list">
+                        <div class="radio search-item">
+                            <input type="radio" name="radio-opt" value="Для влюбленных">
+                            <label>Для влюбленных</label>
+                        </div>
+                        <div class="sublevel">
+                            <div class="radio search-item">
+                                <input type="radio" name="radio-opt" value="Вкусные подарки Любовь">
+                                <label>
+                                    <span class="nesting">-</span>
+                                    <span class="level-mark">2</span>
+                                    Вкусные подарки Любовь
+                                </label>
+                            </div>
+                            <div class="radio search-item">
+                                <input type="radio" name="radio-opt" value="Другое">
+                                <label>
+                                    <span class="nesting">+</span>
+                                    <span class="level-mark">2</span>
+                                    Другое
+                                </label>
+                            </div>
+                            <div class="sublevel">
+                                <div class="radio search-item">
+                                    <input type="radio" name="radio-opt" value="Термостакан “Любовь...">
+                                    <label>
+                                        <span class="nesting">-</span>
+                                        <span class="level-mark">3</span>
+                                        Термостакан “Любовь...
+                                    </label>
+                                </div>
+                                <div class="radio search-item">
+                                    <input type="radio" name="radio-opt" value="Другое 2">
+                                    <label>
+                                        <span class="nesting">-</span>
+                                        <span class="level-mark">3</span>
+                                        Другое 2
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="radio search-item">
+                            <input type="radio" name="radio-opt" value="Подарочные наборы">
+                            <label>Подарочные наборы</label>
+                        </div>
+                        <div class="sublevel">
+                            <div class="radio search-item">
+                                <input type="radio" name="radio-opt" value="Мужские наборы">
+                                <label>
+                                    <span class="nesting">-</span>
+                                    <span class="level-mark">2</span>
+                                    Мужские наборы
+                                </label>
+                            </div>
+                            <div class="radio search-item">
+                                <input type="radio" name="radio-opt" value="Женские наборы">
+                                <label>
+                                    <span class="nesting">-</span>
+                                    <span class="level-mark">2</span>
+                                    Женские наборы
+                                </label>
+                            </div>
+                        </div>
+                        <div class="radio search-item">
+                            <input type="radio" name="radio-opt" value="Товары 18+">
+                            <label>Товары 18+</label>
+                        </div>
+                        <div class="radio search-item">
+                            <input type="radio" name="radio-opt" value="Воздушные шары">
+                            <label>Воздушные шары</label>
+                        </div>
+                        <div class="sublevel">
+                            <div class="radio search-item">
+                                <input type="radio" name="radio-opt" value="Латексные шары">
+                                <label>
+                                    <span class="nesting">-</span>
+                                    <span class="level-mark">2</span>
+                                    Латексные шары
+                                </label>
+                            </div>
+                            <div class="radio search-item">
+                                <input type="radio" name="radio-opt" value="Фольгированные шары">
+                                <label>
+                                    <span class="nesting">-</span>
+                                    <span class="level-mark">2</span>
+                                    Фольгированные шары
+                                </label>
+                            </div>
+                        </div>
+                        <div class="radio search-item">
+                            <input type="radio" name="radio-opt" value="Фотоальбомы">
+                            <label>Фотоальбомы</label>
+                        </div>
+                        <div class="sublevel">
+                            <div class="radio search-item">
+                                <input type="radio" name="radio-opt" value="Детские фотоальбомы и фотокниги">
+                                <label>
+                                    <span class="nesting">-</span>
+                                    <span class="level-mark">2</span>
+                                    Детские фотоальбомы и фотокниги
+                                </label>
+                            </div>
+                            <div class="radio search-item">
+                                <input type="radio" name="radio-opt" value="Свадебные фотоальбомы">
+                                <label>
+                                    <span class="nesting">-</span>
+                                    <span class="level-mark">2</span>
+                                    Свадебные фотоальбомы
+                                </label>
+                            </div>
+                            <div class="radio search-item">
+                                <input type="radio" name="radio-opt" value="Классические фотоальбомы и фотокниги">
+                                <label>
+                                    <span class="nesting">-</span>
+                                    <span class="level-mark">2</span>
+                                    Классические фотоальбомы и фотокниги
+                                </label>
+                            </div>
+                        </div>
+                        <div class="radio search-item">
+                            <input type="radio" name="radio-opt" value="Подарочная косметика">
+                            <label>Подарочная косметика</label>
+                        </div>
+                        <div class="radio search-item">
+                            <input type="radio" name="radio-opt" value="Необычные вкусные подарки">
+                            <label>Необычные вкусные подарки</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex align-items-center ms-5">
+                <label for="" class="form-label mb-0 me-3 text-nowrap">Акции</label>
+                <div class="custom-select multy align-bottom f_09" style="width: 200px;">
+                    <button type="button">Не выбрано</button>
+                    <div class="cs-options search-list">
+                        <div class="checkbox search-item">
+                            <input type="checkbox" name="offer-opt" value="Акция 1">
+                            <label>Акция 1</label>
+                        </div>
+                        <div class="checkbox search-item">
+                            <input type="checkbox" name="offer-opt" value="Акция 2">
+                            <label>Акция 2</label>
+                        </div>
+                        <div class="checkbox search-item">
+                            <input type="checkbox" name="offer-opt" value="Акция 3">
+                            <label>Акция 3</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <nav aria-label="..." class="ms-auto">
+                <ul class="pagination mb-0">
+                    <li class="page-item disabled">
+                        <a class="page-link" href="#" tabindex="-1" aria-disabled="true">
+                            <svg class="me-3" width="9" height="14" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8.823 2.22601L3.72351 7.19851L8.823 12.171L7.25307 13.6985L0.572511 7.19851L7.25307 0.698509L8.823 2.22601Z" fill="#303030"/>
+                    </svg><span>Назад</span></a>
+                    </li>
+                    <li class="page-item active" aria-current="page">
+                        <a class="page-link" href="#">1</a>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link" href="#">...</a></li>
+                    <li class="page-item"><a class="page-link" href="#">785</a></li>
+                    <li class="page-item">
+                        <a class="page-link" href="#">
+                            <span>Далее</span><svg class="ms-3" width="10" height="14" viewBox="0 0 10 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0.806152 2.14948L5.90564 7.12198L0.806153 12.0945L2.37608 13.622L9.05664 7.12198L2.37608 0.621979L0.806152 2.14948Z" fill="#392DFF"/>
+                    </svg>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </footer>
+    </div>
+
+    <script src="js/bootstrap.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/custom-forms.js"></script>
+</body>
+
+</html>

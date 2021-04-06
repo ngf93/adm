@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <title>Фото Admin</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/extra.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+
+<body class="position-relative photos-page">
+    <!-- left nav -->
+    <nav class="navigation position-fixed shadow-sm bg-white top-0 bottom-0 start-0 overflow-auto-hidden">
+        <a href="index.html" class="my-4 d-block text-center">
+            <img src="img/images/logo.svg" width="88" height="18" alt="Voo Voo Логотип">
+        </a>
+        <div class="nav-item mx-auto">
+            <div class="nav-link active text-center px-0">
+                <img class="rounded-circle user mx-auto" src="img/images/user.jpg" alt="Пользователь">
+            </div>
+        </div>
+        <div>
+            <div class="nav-item">
+                <a class="nav-link" href="index.html">
+                    <img class="nav-icon" src="img/icons/icon1.svg">
+                    <span>Структура сайта</span>
+                </a>
+            </div>
+            <div class="nav-item">
+                <a class="nav-link" href="edit.html">
+                    <img class="nav-icon" src="img/icons/icon2.svg">
+                    <span>Каталог</span>
+                </a>
+            </div>
+            <div class="nav-item">
+                <a class="nav-link" href="items.html">
+                    <img class="nav-icon" src="img/icons/icon3.svg">
+                    <span>Товары</span>
+                </a>
+            </div>
+            <div class="nav-item">
+                <a class="nav-link" href="photos.html">
+                    <img class="nav-icon" src="img/icons/icon4.svg">
+                    <span>Фильтрация</span>
+                </a>
+            </div>
+            <div class="nav-item">
+                <a class="nav-link" href="promo.html">
+                    <img class="nav-icon" src="img/icons/icon5.svg">
+                    <span>Квиз</span>
+                </a>
+            </div>
+            <div class="nav-item">
+                <a class="nav-link" href="#">
+                    <img class="nav-icon" src="img/icons/icon6.svg">
+                    <span>Новости</span>
+                </a>
+            </div>
+            <div class="nav-item">
+                <a class="nav-link" href="#">
+                    <img class="nav-icon" src="img/icons/icon7.svg">
+                    <span>Отзывы</span>
+                </a>
+            </div>
+            <div class="nav-item">
+                <a class="nav-link" href="#">
+                    <img class="nav-icon" src="img/icons/icon8.svg">
+                    <span>Вакансии</span>
+                </a>
+            </div>
+            <div class="nav-item">
+                <a class="nav-link" href="#">
+                    <img class="nav-icon" src="img/icons/icon9.svg">
+                    <span>Сотрудники</span>
+                </a>
+            </div>
+            <div class="nav-item">
+                <a class="nav-link" href="#">
+                    <img class="nav-icon" src="img/icons/icon10.svg">
+                    <span>Домен и хостинг</span>
+                </a>
+            </div>
+            <div class="nav-item">
+                <a class="nav-link" href="#">
+                    <img class="nav-icon" src="img/icons/icon11.svg">
+                    <span>Настройки</span>
+                </a>
+            </div>
+            <div class="nav-item">
+                <a class="nav-link" href="#">
+                    <img class="nav-icon" src="img/icons/icon12.svg">
+                    <span>Выйти</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="main-area position-relative">
+        <!-- top nav -->
+        <nav class="nav-top bg-white shadow w-100 d-flex align-items-center px-5">
+            <div class="d-inline-block" style="width: 19rem;">
+                <input class="form-control ps-5 col-3 form-search" list="datalistOptions" id="exampleDataList" placeholder="Поиск...">
+                <datalist id="datalistOptions">
+                    <option value="San Francisco">
+                    <option value="New York">
+                    <option value="Seattle">
+                </datalist>
+            </div>
+            <button class="btn btn-link btn-filter p-0 ms-5"></button>
+            <button class="btn btn-primary ms-auto">Сохранить</button>
+        </nav>
+        
+        <main class="d-flex px-5 py-4">
+            <section class="content bg-white p-5">
+                <div class="border-dashed w-100 px-5 py-4 text-end mb-5 position-relative">
+                    <div class="position-absolute start-50 translate-middle top-50">
+                        <svg class="me-4" width="65" height="53" viewBox="0 0 65 53" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M54.1567 17.8931C51.1526 5.92548 39.0158 -1.34077 27.0482 1.66337C17.6959 4.01111 10.905 12.0942 10.2053 21.7113C3.56472 22.8064 -0.930829 29.0773 0.164276 35.7179C1.13777 41.6214 6.25317 45.9449 12.2363 45.9211H22.3915V41.8591H12.2363C7.74953 41.8591 4.11221 38.2217 4.11221 33.735C4.11221 29.2482 7.74953 25.6108 12.2363 25.6108C13.3581 25.6108 14.2674 24.7016 14.2674 23.5798C14.2572 13.4845 22.433 5.29231 32.5283 5.28228C41.2673 5.27352 48.7901 11.4517 50.4806 20.0255C50.6475 20.8816 51.3422 21.5356 52.2069 21.6503C57.7595 22.441 61.6196 27.5832 60.829 33.1357C60.1191 38.1216 55.862 41.8339 50.8258 41.8591H42.7017V45.9211H50.8258C58.6778 45.8974 65.0237 39.5128 64.9999 31.6609C64.9801 25.1248 60.5062 19.4441 54.1567 17.8931Z" fill="#EC6446"/>
+                                <path d="M31.1048 26.2L22.9807 34.3241L25.8445 37.1878L30.5158 32.5368V52.0143H34.5779V32.5368L39.2289 37.1878L42.0927 34.3241L33.9686 26.2C33.1763 25.4124 31.897 25.4124 31.1048 26.2Z" fill="#EC6446"/>
+                                    </svg>
+                        <span> Перетащите изображение</span>
+                    </div>
+                    <span class="text-muted mx-5 px-5">или нажмите</span>
+
+                    <div class="position-relative d-inline-block">
+                        <input type="file" class="top-0 start-0 w-100 h-100 position-absolute">
+                        <div class="btn btn-primary">Загрузить</div>
+                    </div>
+
+
+                </div>
+                <div class="row row-cols-5 gy-4 overflow-auto">
+                    <div>
+                        <div class="position-relative">
+                            <input class="form-check-input end-0 top-0 mt-3 me-3 position-absolute" type="checkbox" style="width: 1.125rem; height: 1.125rem;">
+                            <div class="border mb-3 position-relative box" style="height: 18rem;">
+                                <img class="w-100 h-100" src="img/calendar.jpg" alt="">
+                                <button class="btn bg-white border btn-img p-2 position-absolute bottom-0 me-4 mb-2" onclick="modalImgOpen(this.previousElementSibling)"></button>
+                                <button class="btn bg-white border btn-delete btn-del-4 p-2 position-absolute end-0 bottom-0 me-2 mb-2"></button>
+                            </div>
+                            <div class="fw-medium">Неприлично длинное название изображения очень</div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="position-relative">
+                            <input class="form-check-input end-0 top-0 mt-3 me-3 position-absolute" type="checkbox" style="width: 1.125rem; height: 1.125rem;">
+                            <div class="border mb-3 position-relative box" style="height: 18rem;">
+                                <img class="w-100 h-100" src="https://randomwordgenerator.com/img/picture-generator/55e8d5464353ad14f1dc8460962e33791c3ad6e04e50744172297cdc904ac3_640.jpg" alt="">
+                                <button class="btn bg-white border btn-img p-2 position-absolute bottom-0 me-4 mb-2" onclick="modalImgOpen(this.previousElementSibling)"></button>
+                                <button class="btn bg-white border btn-delete btn-del-4 p-2 position-absolute end-0 bottom-0 me-2 mb-2"></button>
+                            </div>
+                            <div class="fw-medium">IMG_2046</div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="position-relative">
+                            <input class="form-check-input end-0 top-0 mt-3 me-3 position-absolute" type="checkbox" style="width: 1.125rem; height: 1.125rem;">
+                            <div class="border mb-3 position-relative box" style="height: 18rem;">
+                                <img class="w-100 h-100" src="https://randomwordgenerator.com/img/picture-generator/57e3d74a424faa0df7c5d57bc32f3e7b1d3ac3e45659764f702879d095_640.jpg" alt="">
+                                <button class="btn bg-white border btn-img p-2 position-absolute bottom-0 me-4 mb-2" onclick="modalImgOpen(this.previousElementSibling)"></button>
+                                <button class="btn bg-white border btn-delete btn-del-4 p-2 position-absolute end-0 bottom-0 me-2 mb-2"></button>
+                            </div>
+                            <div class="fw-medium">Маленький крот</div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="position-relative">
+                            <input class="form-check-input end-0 top-0 mt-3 me-3 position-absolute" type="checkbox" style="width: 1.125rem; height: 1.125rem;">
+                            <div class="border mb-3 position-relative box" style="height: 18rem;">
+                                <img class="w-100 h-100" src="https://randomwordgenerator.com/img/picture-generator/55e1d14a4d5aaf14f1dc8460962e33791c3ad6e04e5074417d2e72d1964dc6_640.jpg" alt="">
+                                <button class="btn bg-white border btn-img p-2 position-absolute bottom-0 me-4 mb-2" onclick="modalImgOpen(this.previousElementSibling)"></button>
+                                <button class="btn bg-white border btn-delete btn-del-4 p-2 position-absolute end-0 bottom-0 me-2 mb-2"></button>
+                            </div>
+                            <div class="fw-medium">Есть только миг</div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="position-relative">
+                            <input class="form-check-input end-0 top-0 mt-3 me-3 position-absolute" type="checkbox" style="width: 1.125rem; height: 1.125rem;">
+                            <div class="border mb-3 position-relative box" style="height: 18rem;">
+                                <img class="w-100 h-100" src="https://randomwordgenerator.com/img/picture-generator/55e6d5444254af14f1dc8460962e33791c3ad6e04e50744075277cdc964fc0_640.jpg" alt="">
+                                <button class="btn bg-white border btn-img p-2 position-absolute bottom-0 me-4 mb-2" onclick="modalImgOpen(this.previousElementSibling)"></button>
+                                <button class="btn bg-white border btn-delete btn-del-4 p-2 position-absolute end-0 bottom-0 me-2 mb-2"></button>
+                            </div>
+                            <div class="fw-medium">Чики</div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="position-relative">
+                            <input class="form-check-input end-0 top-0 mt-3 me-3 position-absolute" type="checkbox" style="width: 1.125rem; height: 1.125rem;">
+                            <div class="border mb-3 position-relative box" style="height: 18rem;">
+                                <img class="w-100 h-100" src="https://randomwordgenerator.com/img/picture-generator/50e3d3434850b10ff3d8992cc12c30771037dbf85254784874297ad2944c_640.jpg" alt="">
+                                <button class="btn bg-white border btn-img p-2 position-absolute bottom-0 me-4 mb-2" data-bs-toggle="modal" data-bs-target="#photoModal"></button>
+                                <button class="btn bg-white border btn-delete btn-del-4 p-2 position-absolute end-0 bottom-0 me-2 mb-2"></button>
+                                
+                            </div>
+                            <div class="fw-medium">IMG_2046</div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="position-relative">
+                            <input class="form-check-input end-0 top-0 mt-3 me-3 position-absolute" type="checkbox" style="width: 1.125rem; height: 1.125rem;">
+                            <div class="border mb-3 position-relative box" style="height: 18rem;">
+                                <button class="btn bg-white border btn-img p-2 position-absolute bottom-0 me-4 mb-2" data-bs-toggle="modal" data-bs-target="#photoModal"></button>
+                                <button class="btn bg-white border btn-delete btn-del-4 p-2 position-absolute end-0 bottom-0 me-2 mb-2"></button>
+                                <img class="w-100 h-100" src="https://randomwordgenerator.com/img/picture-generator/57e1d6434c51ac14f1dc8460962e33791c3ad6e04e507440762879dd974dc1_640.jpg" alt="">
+                            </div>
+                            <div class="fw-medium">Неприлично длинное название изображения очень</div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="position-relative">
+                            <input class="form-check-input end-0 top-0 mt-3 me-3 position-absolute" type="checkbox" style="width: 1.125rem; height: 1.125rem;">
+                            <div class="border mb-3 position-relative box" style="height: 18rem;">
+                                <button class="btn bg-white border btn-img p-2 position-absolute bottom-0 me-4 mb-2" data-bs-toggle="modal" data-bs-target="#photoModal"></button>
+                                <button class="btn bg-white border btn-delete btn-del-4 p-2 position-absolute end-0 bottom-0 me-2 mb-2"></button>
+                                <img class="w-100 h-100" src="https://randomwordgenerator.com/img/picture-generator/55e8d5464353ad14f1dc8460962e33791c3ad6e04e50744172297cdc904ac3_640.jpg" alt="">
+                            </div>
+                            <div class="fw-medium">IMG_2046</div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="position-relative">
+                            <input class="form-check-input end-0 top-0 mt-3 me-3 position-absolute" type="checkbox" style="width: 1.125rem; height: 1.125rem;">
+                            <div class="border mb-3 position-relative box" style="height: 18rem;">
+                                <button class="btn bg-white border btn-img p-2 position-absolute bottom-0 me-4 mb-2" data-bs-toggle="modal" data-bs-target="#photoModal"></button>
+                                <button class="btn bg-white border btn-delete btn-del-4 p-2 position-absolute end-0 bottom-0 me-2 mb-2"></button>
+                                <img class="w-100 h-100" src="https://randomwordgenerator.com/img/picture-generator/57e3d74a424faa0df7c5d57bc32f3e7b1d3ac3e45659764f702879d095_640.jpg" alt="">
+                            </div>
+                            <div class="fw-medium">Маленький крот</div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="position-relative">
+                            <input class="form-check-input end-0 top-0 mt-3 me-3 position-absolute" type="checkbox" style="width: 1.125rem; height: 1.125rem;">
+                            <div class="border mb-3 position-relative box" style="height: 18rem;">
+                                <button class="btn bg-white border btn-img p-2 position-absolute bottom-0 me-4 mb-2" data-bs-toggle="modal" data-bs-target="#photoModal"></button>
+                                <button class="btn bg-white border btn-delete btn-del-4 p-2 position-absolute end-0 bottom-0 me-2 mb-2"></button>
+                                <img class="w-100 h-100" src="https://randomwordgenerator.com/img/picture-generator/55e1d14a4d5aaf14f1dc8460962e33791c3ad6e04e5074417d2e72d1964dc6_640.jpg" alt="">
+                            </div>
+                            <div class="fw-medium">Есть только миг</div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="position-relative">
+                            <input class="form-check-input end-0 top-0 mt-3 me-3 position-absolute" type="checkbox" style="width: 1.125rem; height: 1.125rem;">
+                            <div class="border mb-3 position-relative box" style="height: 18rem;">
+                                <button class="btn bg-white border btn-img p-2 position-absolute bottom-0 me-4 mb-2" data-bs-toggle="modal" data-bs-target="#photoModal"></button>
+                                <button class="btn bg-white border btn-delete btn-del-4 p-2 position-absolute end-0 bottom-0 me-2 mb-2"></button>
+                                <img class="w-100 h-100" src="https://randomwordgenerator.com/img/picture-generator/55e6d5444254af14f1dc8460962e33791c3ad6e04e50744075277cdc964fc0_640.jpg" alt="">
+                            </div>
+                            <div class="fw-medium">Чики</div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="position-relative">
+                            <input class="form-check-input end-0 top-0 mt-3 me-3 position-absolute" type="checkbox" style="width: 1.125rem; height: 1.125rem;">
+                            <div class="border mb-3 position-relative box" style="height: 18rem;">
+                                <button class="btn bg-white border btn-img p-2 position-absolute bottom-0 me-4 mb-2" data-bs-toggle="modal" data-bs-target="#photoModal"></button>
+                                <button class="btn bg-white border btn-delete btn-del-4 p-2 position-absolute end-0 bottom-0 me-2 mb-2"></button>
+                                <img class="w-100 h-100" src="https://randomwordgenerator.com/img/picture-generator/50e3d3434850b10ff3d8992cc12c30771037dbf85254784874297ad2944c_640.jpg" alt="">
+                            </div>
+                            <div class="fw-medium">IMG_2046</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Photo Modal -->
+    <div id="modalImg">
+        <div class="img"></div>
+        <button class="btn bg-white border btn-img p-2 position-absolute bottom-0 me-4 mb-2" onclick="modalImgClose()"></button>
+        <button class="btn bg-white border btn-delete btn-del-4 p-2 position-absolute end-0 bottom-0 me-2 mb-2"></button>
+    </div>
+
+    <script src="js/bootstrap.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/custom-forms.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="ru" class="h-100">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <title>Редактирование чего-то</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/extra.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+
+<body class="position-relative">
+    <!-- left nav -->
+    <nav class="navigation position-fixed shadow-sm bg-white top-0 bottom-0 start-0 overflow-auto-hidden">
+        <a href="index.html" class="my-4 d-block text-center">
+            <img src="img/images/logo.svg" width="88" height="18" alt="Voo Voo Логотип">
+        </a>
+        <div class="nav-item mx-auto">
+            <div class="nav-link active text-center px-0">
+                <img class="rounded-circle user mx-auto" src="img/images/user.jpg" alt="Пользователь">
+            </div>
+        </div>
+        <div>
+            <div class="nav-item">
+                <a class="nav-link" href="index.html">
+                    <img class="nav-icon" src="img/icons/icon1.svg">
+                    <span>Структура сайта</span>
+                </a>
+            </div>
+            <div class="nav-item">
+                <a class="nav-link" href="edit.html">
+                    <img class="nav-icon" src="img/icons/icon2.svg">
+                    <span>Каталог</span>
+                </a>
+            </div>
+            <div class="nav-item">
+                <a class="nav-link" href="items.html">
+                    <img class="nav-icon" src="img/icons/icon3.svg">
+                    <span>Товары</span>
+                </a>
+            </div>
+            <div class="nav-item">
+                <a class="nav-link" href="photos.html">
+                    <img class="nav-icon" src="img/icons/icon4.svg">
+                    <span>Фильтрация</span>
+                </a>
+            </div>
+            <div class="nav-item">
+                <a class="nav-link" href="promo.html">
+                    <img class="nav-icon" src="img/icons/icon5.svg">
+                    <span>Квиз</span>
+                </a>
+            </div>
+            <div class="nav-item">
+                <a class="nav-link" href="#">
+                    <img class="nav-icon" src="img/icons/icon6.svg">
+                    <span>Новости</span>
+                </a>
+            </div>
+            <div class="nav-item">
+                <a class="nav-link" href="#">
+                    <img class="nav-icon" src="img/icons/icon7.svg">
+                    <span>Отзывы</span>
+                </a>
+            </div>
+            <div class="nav-item">
+                <a class="nav-link" href="#">
+                    <img class="nav-icon" src="img/icons/icon8.svg">
+                    <span>Вакансии</span>
+                </a>
+            </div>
+            <div class="nav-item">
+                <a class="nav-link" href="#">
+                    <img class="nav-icon" src="img/icons/icon9.svg">
+                    <span>Сотрудники</span>
+                </a>
+            </div>
+            <div class="nav-item">
+                <a class="nav-link" href="#">
+                    <img class="nav-icon" src="img/icons/icon10.svg">
+                    <span>Домен и хостинг</span>
+                </a>
+            </div>
+            <div class="nav-item">
+                <a class="nav-link" href="#">
+                    <img class="nav-icon" src="img/icons/icon11.svg">
+                    <span>Настройки</span>
+                </a>
+            </div>
+            <div class="nav-item">
+                <a class="nav-link" href="#">
+                    <img class="nav-icon" src="img/icons/icon12.svg">
+                    <span>Выйти</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- main content -->
+    <div class="main-area position-relative">
+        <!-- top nav -->
+        <nav class="nav-top bg-white shadow w-100 d-flex align-items-center px-5">
+            <div class="d-inline-block" style="width: 19rem;">
+                <input class="form-control ps-5 col-3 form-search" list="datalistOptions" id="exampleDataList" placeholder="Поиск...">
+                <datalist id="datalistOptions">
+                    <option value="San Francisco">
+                    <option value="New York">
+                    <option value="Seattle">
+                </datalist>
+            </div>
+            <button class="btn btn-link btn-filter p-0 ms-5"></button>
+        </nav>
+
+        <main class="d-flex px-5 py-4">
+            <section class="content bg-white">
+                <!-- breadcrumb -->
+                <div class="py-3 px-4 border-bottom">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb fw-bold mb-0">
+                            <li class="breadcrumb-item"><a href="#">Каталог</a></li>
+                            <li class="breadcrumb-item"><a href="#">Список</a></li>
+                            <li class="breadcrumb-item active fw-normal" aria-current="page">Редактировать</li>
+                        </ol>
+                    </nav>
+                </div>
+                <!-- tabs group -->
+                <div class="px-5 pt-4">
+                    <!-- tabs -->
+                    <ul class="nav nav-tabs fw-medium" id="myTab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="main-tab" data-bs-toggle="tab" data-bs-target="#main" type="button" role="tab" aria-controls="main" aria-selected="true">Общие</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="options-tab" data-bs-toggle="tab" data-bs-target="#options" type="button" role="tab" aria-controls="options" aria-selected="false">Параметры</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="seo-tab" data-bs-toggle="tab" data-bs-target="#seo" type="button" role="tab" aria-controls="seo" aria-selected="false">SEO</button>
+                        </li>
+                    </ul>
+                    <!-- tabs content -->
+                    <div class="tab-content pt-5" id="myTabContent">
+                        <!-- Main Tab -->
+                        <div class="tab-pane fade show active d-flx" id="main" role="tabpanel" aria-labelledby="main-tab">
+                            <div class="d-flex">
+                                <div class="col-5 pe-5">
+                                    <div class="mb-3">
+                                        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Название">
+                                    </div>
+                                    <!-- custom select single -->
+                                    <div class="custom-select single mb-3">
+                                        <button type="button">Не выбрано</button>
+                                        <div class="cs-options search-list">
+                                            <input type="search" placeholder="Поиск" class="search-in-list">
+                                            <div class="radio search-item">
+                                                <input type="radio" name="radio-opt" value="Для влюбленных">
+                                                <label>Для влюбленных</label>
+                                            </div>
+                                            <div class="sublevel">
+                                                <div class="radio search-item">
+                                                    <input type="radio" name="radio-opt" value="Вкусные подарки Любовь">
+                                                    <label>
+                                                        <span class="nesting">-</span>
+                                                        <span class="level-mark">2</span>
+                                                        Вкусные подарки Любовь
+                                                    </label>
+                                                </div>
+                                                <div class="radio search-item">
+                                                    <input type="radio" name="radio-opt" value="Другое">
+                                                    <label>
+                                                        <span class="nesting">+</span>
+                                                        <span class="level-mark">2</span>
+                                                        Другое
+                                                    </label>
+                                                </div>
+                                                <div class="sublevel">
+                                                    <div class="radio search-item">
+                                                        <input type="radio" name="radio-opt" value="Термостакан “Любовь...">
+                                                        <label>
+                                                            <span class="nesting">-</span>
+                                                            <span class="level-mark">3</span>
+                                                            Термостакан “Любовь...
+                                                        </label>
+                                                    </div>
+                                                    <div class="radio search-item">
+                                                        <input type="radio" name="radio-opt" value="Другое 2">
+                                                        <label>
+                                                            <span class="nesting">-</span>
+                                                            <span class="level-mark">3</span>
+                                                            Другое 2
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="radio search-item">
+                                                <input type="radio" name="radio-opt" value="Подарочные наборы">
+                                                <label>Подарочные наборы</label>
+                                            </div>
+                                            <div class="sublevel">
+                                                <div class="radio search-item">
+                                                    <input type="radio" name="radio-opt" value="Мужские наборы">
+                                                    <label>
+                                                        <span class="nesting">-</span>
+                                                        <span class="level-mark">2</span>
+                                                        Мужские наборы
+                                                    </label>
+                                                </div>
+                                                <div class="radio search-item">
+                                                    <input type="radio" name="radio-opt" value="Женские наборы">
+                                                    <label>
+                                                        <span class="nesting">-</span>
+                                                        <span class="level-mark">2</span>
+                                                        Женские наборы
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="radio search-item">
+                                                <input type="radio" name="radio-opt" value="Товары 18+">
+                                                <label>Товары 18+</label>
+                                            </div>
+                                            <div class="radio search-item">
+                                                <input type="radio" name="radio-opt" value="Воздушные шары">
+                                                <label>Воздушные шары</label>
+                                            </div>
+                                            <div class="sublevel">
+                                                <div class="radio search-item">
+                                                    <input type="radio" name="radio-opt" value="Латексные шары">
+                                                    <label>
+                                                        <span class="nesting">-</span>
+                                                        <span class="level-mark">2</span>
+                                                        Латексные шары
+                                                    </label>
+                                                </div>
+                                                <div class="radio search-item">
+                                                    <input type="radio" name="radio-opt" value="Фольгированные шары">
+                                                    <label>
+                                                        <span class="nesting">-</span>
+                                                        <span class="level-mark">2</span>
+                                                        Фольгированные шары
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="radio search-item">
+                                                <input type="radio" name="radio-opt" value="Фотоальбомы">
+                                                <label>Фотоальбомы</label>
+                                            </div>
+                                            <div class="sublevel">
+                                                <div class="radio search-item">
+                                                    <input type="radio" name="radio-opt" value="Детские фотоальбомы и фотокниги">
+                                                    <label>
+                                                        <span class="nesting">-</span>
+                                                        <span class="level-mark">2</span>
+                                                        Детские фотоальбомы и фотокниги
+                                                    </label>
+                                                </div>
+                                                <div class="radio search-item">
+                                                    <input type="radio" name="radio-opt" value="Свадебные фотоальбомы">
+                                                    <label>
+                                                        <span class="nesting">-</span>
+                                                        <span class="level-mark">2</span>
+                                                        Свадебные фотоальбомы
+                                                    </label>
+                                                </div>
+                                                <div class="radio search-item">
+                                                    <input type="radio" name="radio-opt" value="Классические фотоальбомы и фотокниги">
+                                                    <label>
+                                                        <span class="nesting">-</span>
+                                                        <span class="level-mark">2</span>
+                                                        Классические фотоальбомы и фотокниги
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="radio search-item">
+                                                <input type="radio" name="radio-opt" value="Подарочная косметика">
+                                                <label>Подарочная косметика</label>
+                                            </div>
+                                            <div class="radio search-item">
+                                                <input type="radio" name="radio-opt" value="Необычные вкусные подарки">
+                                                <label>Необычные вкусные подарки</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- custom select multy -->
+                                    <div class="custom-select multy mb-3">
+                                        <button type="button">Не выбрано</button>
+                                        <div class="cs-options search-list">
+                                            <input type="search" placeholder="Поиск" class="search-in-list">
+                                            <div class="checkbox search-item">
+                                                <input type="checkbox" name="offer-opt" value="Акция 1">
+                                                <label>Акция 1</label>
+                                            </div>
+                                            <div class="checkbox search-item">
+                                                <input type="checkbox" name="offer-opt" value="Акция 2">
+                                                <label>Акция 2</label>
+                                            </div>
+                                            <div class="checkbox search-item">
+                                                <input type="checkbox" name="offer-opt" value="Акция 3">
+                                                <label>Акция 3</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row gx-3 align-items-center mb-3">    
+                                        <div class="col-6">
+                                            <div class="lh_n">Цена</div>
+                                        </div>
+                                        <div class="col-6">
+                                            <input type="text" class="form-control text-end" placeholder="0" value="150">
+                                        </div>
+                                    </div>
+                                    <div class="row gx-3 align-items-center mb-3">    
+                                        <div class="col-6">
+                                            <div class="lh_n">Кол-во</div>
+                                        </div>
+                                        <div class="col-6">
+                                            <input type="text" class="form-control text-end" placeholder="0" value="2">
+                                        </div>
+                                    </div>
+                                    <div class="form-check form-switch mb-3 ps-0 d-flex justify-content-between">
+                                        <label class="form-check-label" for="status-switch">Статус</label>
+                                        <div class="d-flex align-items-center fs-6 flex-row-reverse">
+                                            <input class="form-check-input m-0 float-none" type="checkbox" id="status-switch">
+                                            <span class="text-muted me-4 status-state"></span>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex align-items-center justify-content-between mb-3">
+                                        <span>Дата изменения</span>
+                                        <span class="text-muted">24.02.21</span>
+                                    </div>
+                                    <textarea class="form-control p-3" placeholder="Описание товара" name="" id="" rows="6"></textarea>
+                                </div>
+
+
+                                <div class="col-5 position-relative">
+                                    <div class="h2 position-absolute" style="top: -55px;">Фото</div>
+
+                                    <div class="mb-4 gx-4 row row-cols-2">
+                                        <div>
+                                            <div class="w-100 border-dashed col-6 text-center text-muted d-flex flex-column align-items-center py-5">
+                                                <svg class="mb-2" width="65" height="53" viewBox="0 0 65 53" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M54.1567 17.8931C51.1526 5.92548 39.0158 -1.34077 27.0482 1.66337C17.6959 4.01111 10.905 12.0942 10.2053 21.7113C3.56472 22.8064 -0.930829 29.0773 0.164276 35.7179C1.13777 41.6214 6.25317 45.9449 12.2363 45.9211H22.3915V41.8591H12.2363C7.74953 41.8591 4.11221 38.2217 4.11221 33.735C4.11221 29.2482 7.74953 25.6108 12.2363 25.6108C13.3581 25.6108 14.2674 24.7016 14.2674 23.5798C14.2572 13.4845 22.433 5.29231 32.5283 5.28228C41.2673 5.27352 48.7901 11.4517 50.4806 20.0255C50.6475 20.8816 51.3422 21.5356 52.2069 21.6503C57.7595 22.441 61.6196 27.5832 60.829 33.1357C60.1191 38.1216 55.862 41.8339 50.8258 41.8591H42.7017V45.9211H50.8258C58.6778 45.8974 65.0237 39.5128 64.9999 31.6609C64.9801 25.1248 60.5062 19.4441 54.1567 17.8931Z" fill="#392DFF"/>
+                                                        <path d="M31.1048 26.2L22.9807 34.3241L25.8445 37.1878L30.5158 32.5368V52.0143H34.5779V32.5368L39.2289 37.1878L42.0927 34.3241L33.9686 26.2C33.1763 25.4124 31.897 25.4124 31.1048 26.2Z" fill="#392DFF"/>
+                                                    </svg>
+                                                <span>800 х 600</span>
+                                            </div>
+                                        </div>
+                                        <div class="position-relative">
+                                            <input type="file" class="col-6 top-0 start-0 w-100 h-100 position-absolute">
+                                            <div class="h-100 d-flex" style="background-color: #E5E5E5;">
+                                                <svg class="m-auto" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <rect x="18" width="4" height="40" rx="2" fill="#909090"/>
+                                                        <rect x="40" y="18" width="4" height="40" rx="2" transform="rotate(90 40 18)" fill="#909090"/>
+                                                    </svg>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row row-cols-4 g-3 overflow-auto align-content-start" style="height: 25rem;">
+                                        <div>
+                                            <div class="border mb-2 position-relative" style="height: 9.375rem;">
+                                                <input class="form-check-input start-0 bottom-0 ms-2 mb-2 position-absolute" type="checkbox" title="Выбрать">
+                                                <img class="w-100 h-100 box" src="https://randomwordgenerator.com/img/picture-generator/57e1d6434c51ac14f1dc8460962e33791c3ad6e04e507440762879dd974dc1_640.jpg" alt="">
+                                            </div>
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <div class="fw-medium text-nowrap text-truncate">Неприлично длинное название изображения очень</div>
+                                                <button class="btn btn-link btn-delete-2 p-1 flex-shrink-0" title="Удалить"></button>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div class="border mb-2 position-relative" style="height: 9.375rem;">
+                                                <input class="form-check-input start-0 bottom-0 ms-2 mb-2 position-absolute" type="checkbox" title="Выбрать">
+                                                <img class="w-100 h-100 box" src="https://randomwordgenerator.com/img/picture-generator/55e8d5464353ad14f1dc8460962e33791c3ad6e04e50744172297cdc904ac3_640.jpg" alt="">
+                                            </div>
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <div class="fw-medium text-nowrap text-truncate">IMG_2046</div>
+                                                <button class="btn btn-link btn-delete-2 p-1 flex-shrink-0" title="Удалить"></button>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div class="border mb-2 position-relative" style="height: 9.375rem;">
+                                                <input class="form-check-input start-0 bottom-0 ms-2 mb-2 position-absolute" type="checkbox" title="Выбрать">
+                                                <img class="w-100 h-100 box" src="https://randomwordgenerator.com/img/picture-generator/57e1d6434c51ac14f1dc8460962e33791c3ad6e04e507440762879dd974dc1_640.jpg" alt="">
+                                            </div>
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <div class="fw-medium text-nowrap text-truncate">Неприлично длинное название изображения очень</div>
+                                                <button class="btn btn-link btn-delete-2 p-1 flex-shrink-0" title="Удалить"></button>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div class="border mb-2 position-relative" style="height: 9.375rem;">
+                                                <input class="form-check-input start-0 bottom-0 ms-2 mb-2 position-absolute" type="checkbox" title="Выбрать">
+                                                <img class="w-100 h-100 box" src="https://randomwordgenerator.com/img/picture-generator/55e8d5464353ad14f1dc8460962e33791c3ad6e04e50744172297cdc904ac3_640.jpg" alt="">
+                                            </div>
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <div class="fw-medium text-nowrap text-truncate">IMG_2046</div>
+                                                <button class="btn btn-link btn-delete-2 p-1 flex-shrink-0" title="Удалить"></button>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div class="border mb-2 position-relative" style="height: 9.375rem;">
+                                                <input class="form-check-input start-0 bottom-0 ms-2 mb-2 position-absolute" type="checkbox" title="Выбрать">
+                                                <img class="w-100 h-100 box" src="https://randomwordgenerator.com/img/picture-generator/57e1d6434c51ac14f1dc8460962e33791c3ad6e04e507440762879dd974dc1_640.jpg" alt="">
+                                            </div>
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <div class="fw-medium text-nowrap text-truncate">Неприлично длинное название изображения очень</div>
+                                                <button class="btn btn-link btn-delete-2 p-1 flex-shrink-0" title="Удалить"></button>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div class="border mb-2 position-relative" style="height: 9.375rem;">
+                                                <input class="form-check-input start-0 bottom-0 ms-2 mb-2 position-absolute" type="checkbox" title="Выбрать">
+                                                <img class="w-100 h-100 box" src="https://randomwordgenerator.com/img/picture-generator/55e8d5464353ad14f1dc8460962e33791c3ad6e04e50744172297cdc904ac3_640.jpg" alt="">
+                                            </div>
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <div class="fw-medium text-nowrap text-truncate">IMG_2046</div>
+                                                <button class="btn btn-link btn-delete-2 p-1 flex-shrink-0" title="Удалить"></button>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div class="border mb-2 position-relative" style="height: 9.375rem;">
+                                                <input class="form-check-input start-0 bottom-0 ms-2 mb-2 position-absolute" type="checkbox" title="Выбрать">
+                                                <img class="w-100 h-100 box" src="https://randomwordgenerator.com/img/picture-generator/57e1d6434c51ac14f1dc8460962e33791c3ad6e04e507440762879dd974dc1_640.jpg" alt="">
+                                            </div>
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <div class="fw-medium text-nowrap text-truncate">Неприлично длинное название изображения очень</div>
+                                                <button class="btn btn-link btn-delete-2 p-1 flex-shrink-0" title="Удалить"></button>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div class="border mb-2 position-relative" style="height: 9.375rem;">
+                                                <input class="form-check-input start-0 bottom-0 ms-2 mb-2 position-absolute" type="checkbox" title="Выбрать">
+                                                <img class="w-100 h-100 box" src="https://randomwordgenerator.com/img/picture-generator/55e8d5464353ad14f1dc8460962e33791c3ad6e04e50744172297cdc904ac3_640.jpg" alt="">
+                                            </div>
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <div class="fw-medium">IMG_2046</div>
+                                                <button class="btn btn-link btn-delete-2 p-1 flex-shrink-0" title="Удалить"></button>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div class="border mb-2 position-relative" style="height: 9.375rem;">
+                                                <input class="form-check-input start-0 bottom-0 ms-2 mb-2 position-absolute" type="checkbox" title="Выбрать">
+                                                <img class="w-100 h-100 box" src="https://randomwordgenerator.com/img/picture-generator/57e1d6434c51ac14f1dc8460962e33791c3ad6e04e507440762879dd974dc1_640.jpg" alt="">
+                                            </div>
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <div class="fw-medium text-nowrap text-truncate">Неприлично длинное название изображения очень</div>
+                                                <button class="btn btn-link btn-delete-2 p-1 flex-shrink-0" title="Удалить"></button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Main Tab End -->
+                        <!-- Options Tab -->
+                        <div class="tab-pane fade" id="options" role="tabpanel" aria-labelledby="options-tab">
+                            <div class="fs-4.4 fw-medium col-6 overflow-auto" style="height: 40rem;">
+                                <div class="p-3 border d-flex justify-content-between align-items-baseline">
+                                    <span class="w-50 pe-2">Диагональ</span>
+                                    <input class="form-select w-50" list="datalistOptions" id="exampleDataList" placeholder="">
+                                    <datalist id="datalistOptions">
+                                        <option value="7">
+                                        <option value="12">
+                                        <option value="24">
+                                    </datalist>
+                                </div>
+                                <div class="p-3 border d-flex justify-content-between align-items-baseline">
+                                    <span class="w-50 pe-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos dolor omnis, molestiae adipisci natus nobis expedita maxime modi ducimus perspiciatis quam non, dolorem cum similique doloribus debitis quidem odit? Consequatur.</span>
+                                    <input class="form-select w-50" list="datalistOptions" id="exampleDataList" placeholder="">
+                                    <datalist id="datalistOptions">
+                                        <option value="7">
+                                        <option value="12">
+                                        <option value="24">
+                                    </datalist>
+                                </div>
+                                <div class="p-3 border d-flex justify-content-between align-items-baseline">
+                                    <span class="w-50 pe-2">Диагональ</span>
+                                    <input class="form-select w-50" list="datalistOptions" id="exampleDataList" placeholder="">
+                                    <datalist id="datalistOptions">
+                                        <option value="7">
+                                        <option value="12">
+                                        <option value="24">
+                                    </datalist>
+                                </div>
+                                <div class="p-3 border d-flex justify-content-between align-items-baseline">
+                                    <span class="w-50 pe-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos dolor omnis, molestiae adipisci natus nobis expedita maxime modi ducimus perspiciatis quam non, dolorem cum similique doloribus debitis quidem odit? Consequatur.</span>
+                                    <input class="form-select w-50" list="datalistOptions" id="exampleDataList" placeholder="">
+                                    <datalist id="datalistOptions">
+                                        <option value="7">
+                                        <option value="12">
+                                        <option value="24">
+                                    </datalist>
+                                </div>
+                                <div class="p-3 border d-flex justify-content-between align-items-baseline">
+                                    <span class="w-50 pe-2">Диагональ</span>
+                                    <input class="form-select w-50" list="datalistOptions" id="exampleDataList" placeholder="">
+                                    <datalist id="datalistOptions">
+                                        <option value="7">
+                                        <option value="12">
+                                        <option value="24">
+                                    </datalist>
+                                </div>
+                                <div class="p-3 border d-flex justify-content-between align-items-baseline">
+                                    <span class="w-50 pe-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos dolor omnis, molestiae adipisci natus nobis expedita maxime modi ducimus perspiciatis quam non, dolorem cum similique doloribus debitis quidem odit? Consequatur.</span>
+                                    <input class="form-select w-50" list="datalistOptions" id="exampleDataList" placeholder="">
+                                    <datalist id="datalistOptions">
+                                        <option value="7">
+                                        <option value="12">
+                                        <option value="24">
+                                    </datalist>
+                                </div>
+                                <div class="p-3 border d-flex justify-content-between align-items-baseline">
+                                    <span class="w-50 pe-2">Диагональ</span>
+                                    <input class="form-select w-50" list="datalistOptions" id="exampleDataList" placeholder="">
+                                    <datalist id="datalistOptions">
+                                        <option value="7">
+                                        <option value="12">
+                                        <option value="24">
+                                    </datalist>
+                                </div>
+                                <div class="p-3 border d-flex justify-content-between align-items-baseline">
+                                    <span class="w-50 pe-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos dolor omnis, molestiae adipisci natus nobis expedita maxime modi ducimus perspiciatis quam non, dolorem cum similique doloribus debitis quidem odit? Consequatur.</span>
+                                    <input class="form-select w-50" list="datalistOptions" id="exampleDataList" placeholder="">
+                                    <datalist id="datalistOptions">
+                                        <option value="7">
+                                        <option value="12">
+                                        <option value="24">
+                                    </datalist>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Options Tab End -->
+                        <!-- SEO Tab -->
+                        <div class="tab-pane fade" id="seo" role="tabpanel" aria-labelledby="seo-tab">
+                            <div class="overflow-auto px-3" style="height: 40rem;">
+                                <div class="col-6">
+                                    <!-- Title -->
+                                    <div class="mb-5">
+                                        <label for="titleTextarea" class="form-label position-relative">
+                                            <span class="fs-4">Title</span>
+                                            <svg class="position-absolute" width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <circle cx="6" cy="6" r="6" fill="#3B2FFF"/>
+                                                        <path d="M6.02238 2.3C6.46905 2.3 6.86572 2.37 7.21238 2.51C7.55905 2.64333 7.83238 2.84 8.03238 3.1C8.23238 3.36 8.33238 3.67333 8.33238 4.04C8.33238 4.44 8.24572 4.77 8.07238 5.03C7.90572 5.29 7.67905 5.49 7.39238 5.63C7.10572 5.77 6.78905 5.85667 6.44238 5.89L6.41238 6.9H5.38238V5.39C6.03572 5.31 6.49905 5.17667 6.77238 4.99C7.05238 4.79667 7.19238 4.52667 7.19238 4.18C7.19238 3.89333 7.08905 3.66667 6.88238 3.5C6.68238 3.32667 6.37238 3.24 5.95238 3.24C5.55905 3.24 5.23905 3.35 4.99238 3.57C4.74572 3.79 4.59905 4.09667 4.55238 4.49L3.56238 4.04C3.67572 3.52667 3.93905 3.11 4.35238 2.79C4.77238 2.46333 5.32905 2.3 6.02238 2.3ZM5.90238 7.67C6.12905 7.67 6.30905 7.73667 6.44238 7.87C6.57572 7.99667 6.64238 8.16667 6.64238 8.38C6.64238 8.6 6.57572 8.77333 6.44238 8.9C6.30905 9.02667 6.12905 9.09 5.90238 9.09C5.66905 9.09 5.48572 9.02667 5.35238 8.9C5.21905 8.77333 5.15238 8.6 5.15238 8.38C5.15238 8.16667 5.21905 7.99667 5.35238 7.87C5.48572 7.73667 5.66905 7.67 5.90238 7.67Z" fill="white"/>
+                                            </svg>
+                                            <div class="bg-white shadow small position-absolute hint">
+                                                <div class="small text-muted p-3" style="width: 14rem;">
+                                                    <div class="small">Остались вопросы? Выберите свой вопрос, выберите свой вопрос, выберите свой вопрос, выберите свой вопрос, выберите свой вопрос</div>
+                                                </div>
+                                            </div>
+                                        </label>
+                                        <div class="d-flex mb-2 text-muted">
+                                            <label for="titleSwitch">Шаблон</label>
+                                            <div class="form-check form-switch ps-0 mx-4">
+                                                <input class="form-check-input m-0" type="checkbox" id="titleSwitch">
+                                            </div>
+                                            <label for="titleSwitch">Вручную</label>
+                                        </div>
+                                        <textarea class="form-control" id="titleTextarea" rows="3"></textarea>
+                                    </div>
+                                    <!-- Description -->
+                                    <div class="mb-5">
+                                        <label for="descTextarea" class="form-label fs-4">Description</label>
+                                        <div class="d-flex mb-2 text-muted">
+                                            <label for="descSwitch">Шаблон</label>
+                                            <div class="form-check form-switch ps-0 mx-4">
+                                                <input class="form-check-input m-0" type="checkbox" id="descSwitch">
+                                            </div>
+                                            <label for="descSwitch">Вручную</label>
+                                        </div>
+                                        <textarea class="form-control" id="descTextarea" rows="3"></textarea>
+                                    </div>
+                                    <!-- Keywords -->
+                                    <div class="mb-5">
+                                        <label for="keywordsTextarea" class="form-label fs-4">Keywords</label>
+                                        <div class="d-flex mb-2 text-muted">
+                                            <label for="keywordsSwitch">Шаблон</label>
+                                            <div class="form-check form-switch ps-0 mx-4">
+                                                <input class="form-check-input m-0" type="checkbox" id="keywordsSwitch">
+                                            </div>
+                                            <label for="keywordsSwitch">Вручную</label>
+                                        </div>
+                                        <textarea class="form-control" id="keywordsTextarea" rows="3"></textarea>
+                                    </div>
+                                    <!-- URL -->
+                                    <div class="mb-5">
+                                        <label for="urlTextarea" class="form-label fs-4">URL</label>
+                                        <div class="d-flex mb-2 text-muted">
+                                            <label for="urlSwitch">Шаблон</label>
+                                            <div class="form-check form-switch ps-0 mx-4">
+                                                <input class="form-check-input m-0" type="checkbox" id="urlSwitch">
+                                            </div>
+                                            <label for="urlSwitch">Вручную</label>
+                                        </div>
+                                        <textarea class="form-control" id="urlTextarea" rows="3"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- SEO end -->
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Add Group Modal -->
+    <div class="modal fade" id="addGroupModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="addGroupModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title fs-4.4" id="addGroupModalLabel">Добавить группу</h5>
+                </div>
+                <div class="modal-body d-flex align-items-baseline justify-content-center p-5">
+                    <label class="w-25 fs-4.4" for="addgroup">Добавить группу</label>
+                    <input class="form-control w-75" type="text" name="" id="addgroup">
+                </div>
+                <div class="modal-footer pb-4">
+                    <button type="button" class="btn btn-primary me-4">Сохранить</button>
+                    <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal">Отменить</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Option Modal -->
+    <div class="modal fade" id="addOptionModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="addOptionModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title fs-4.4" id="addOptionModalLabel">Добавить параметр</h5>
+                </div>
+                <div class="modal-body d-flex flex-column align-items-end p-5">
+                    <div class="d-flex align-items-center">
+                        <label class="fs-4.4 me-5" for="addgroup">Добавить параметр</label>
+                        <input class="form-control" type="text" name="" id="addgroup">
+                    </div>
+                </div>
+                <div class="modal-footer pb-4">
+                    <button type="button" class="btn btn-primary me-3">Сохранить</button>
+                    <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal">Отменить</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Option Values Modal -->
+    <div class="modal fade" id="addOptionValueModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="addOptionValueModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title fs-4.4" id="addOptionValueModalLabel">Добавить значение</h5>
+                </div>
+                <div class="modal-body d-flex flex-column align-items-end p-5">
+                    <div class="d-flex align-items-center">
+                        <label class="fs-4.4 me-5" for="addgroup">Добавить значение</label>
+                        <input class="form-control" type="text" name="" id="addgroup">
+                        <button class="btn btn-link btn-show p-1 ms-3"></button>
+                    </div>
+                    <div class="d-flex align-items-center mt-4">
+                        <input class="form-control" type="text" name="" id="addgroup">
+                        <button class="btn btn-link btn-delete-3 p-1 ms-3"></button>
+                    </div>
+                </div>
+                <div class="modal-footer pb-4">
+                    <button type="button" class="btn btn-primary me-3">Сохранить</button>
+                    <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal">Отменить</button>
+                    <button type="button" class="btn btn-outline-primary ms-3">Добавить несколько</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/bootstrap.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/custom-forms.js"></script>
+</body>
+
+</html>
