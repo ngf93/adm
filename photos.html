@@ -270,20 +270,47 @@
                 </div>
             </section>
         </main>
+
+        <!-- bottom nav -->
+        <footer class="ms-5 ps-3 pe-5 bg-white shadow-lg d-flex align-items-center">
+            <div>Выбрано: 4 элемента</div>
+            <button class="btn btn-primary py-2 ms-5 me-auto">Удалить</button>
+            <nav aria-label="..." class="ms-auto">
+                <ul class="pagination mb-0">
+                    <li class="page-item disabled">
+                        <a class="page-link" href="#" tabindex="-1" aria-disabled="true">
+                            <svg class="me-3" width="9" height="14" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8.823 2.22601L3.72351 7.19851L8.823 12.171L7.25307 13.6985L0.572511 7.19851L7.25307 0.698509L8.823 2.22601Z" fill="#303030"/>
+                    </svg><span>Назад</span></a>
+                    </li>
+                    <li class="page-item active" aria-current="page">
+                        <a class="page-link" href="#">1</a>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link" href="#">...</a></li>
+                    <li class="page-item"><a class="page-link" href="#">785</a></li>
+                    <li class="page-item">
+                        <a class="page-link" href="#">
+                            <span>Далее</span><svg class="ms-3" width="10" height="14" viewBox="0 0 10 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0.806152 2.14948L5.90564 7.12198L0.806153 12.0945L2.37608 13.622L9.05664 7.12198L2.37608 0.621979L0.806152 2.14948Z" fill="#392DFF"/>
+                    </svg>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </footer>
     </div>
 
     <!-- Photo Modal -->
     <div id="modalImg">
         <div class="img"></div>
-        <button class="btn bg-white border btn-img p-2 position-absolute bottom-0 me-4 mb-2" onclick="modalImgClose()"></button>
+        <button class="btn bg-white border btn-img btn-img-close p-2 position-absolute bottom-0 me-4 mb-2" onclick="modalImgClose()"></button>
         <button class="btn bg-white border btn-delete btn-del-4 p-2 position-absolute end-0 bottom-0 me-2 mb-2"></button>
     </div>
 
     <script src="js/bootstrap.js"></script>
-    <script src="js/jquery.min.js"></script>
     <script src="js/script.js"></script>
-    <script src="js/custom-forms.js"></script>
 
 </body>
-
 </html>

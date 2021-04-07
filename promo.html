@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=1920">
     <title>Admin - Акции</title>
     <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/jquery-ui.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/extra.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -124,7 +123,7 @@
                             <li class="breadcrumb-item active fw-normal" aria-current="page">Список</li>
                         </ol>
                     </nav>
-                    <button class="btn btn-primary ms-5">Добавить категорию</button>
+                    <button class="btn btn-primary ms-5">Добавить акцию</button>
                     <select class="form-select border-0 fs-5 w-auto">
                         <option value="1" selected>Показывать по 20</option>
                         <option value="2">Показывать по 30</option>
@@ -188,20 +187,34 @@
                         <span>Товары</span>
                         <span>23</span>
                     </div>
-                    <div class="mb-3 d-flex justify-content-between align-items-baseline">
-                        <label for="date-input-1">Срок</label>
-                        <div>
-                            <div class="mb-2 d-flex align-items-center">
-                                <label for="from" class="me-4">от</label>
-                                <input class="form-control" type="text" id="from" name="from" autocomplete="off">
-                            </div>
-                            <div class="d-flex align-items-center">
-                                <label for="to" class="me-4">до</label>
-                                <input class="form-control" type="text" id="to" name="to" autocomplete="off">
-                            </div>
+                    <div class="form-check form-switch mb-3 ps-0 d-flex justify-content-between">
+                        <label class="form-check-label" for="status-switch">Статус</label>
+                        <div class="d-flex align-items-center fs-6 flex-row-reverse">
+                            <input class="form-check-input m-0 float-none" type="checkbox" id="status-switch">
+                            <span class="text-muted me-4 status-state"></span>
                         </div>
                     </div>
-
+                    <div class="d-flex align-items-center justify-content-between mb-3">
+                        <span>Дата изменения</span>
+                        <span class="text-muted">24.02.21</span>
+                    </div>
+                    <div class="row gx-3 align-items-center mb-3">
+                       <div class="col-6">Скидка</div>
+                       <div class="col-6">
+                            <div class="d-flex align-items-center">
+                                <input type="number" class="form-select me-2" placeholder="0" list="discount-select">
+                                <datalist id="discount-select">
+                                    <option value="5">5</option>
+                                    <option value="10">10</option>
+                                    <option value="15">15</option>
+                                    <option value="20">20</option>
+                                    <option value="25">25</option>
+                                    <option value="30">30</option>
+                                </datalist>
+                                <span>%</span>
+                            </div>
+                       </div> 
+                    </div>
                     <div class="row gx-3 align-items-center mb-3">
                         <div class="col-6 mb-2">
                             <div class="d-flex justify-content-between">
@@ -221,33 +234,6 @@
                             <input type="date" class="form-control">
                         </div>
                     </div>
-
-                    <div class="form-check form-switch mb-3 ps-0 d-flex justify-content-between">
-                        <label class="form-check-label" for="status-switch">Статус</label>
-                        <div class="d-flex align-items-center fs-6 flex-row-reverse">
-                            <input class="form-check-input m-0 float-none" type="checkbox" id="status-switch">
-                            <span class="text-muted me-4 status-state"></span>
-                        </div>
-                    </div>
-                    <div class="d-flex align-items-center justify-content-between mb-3">
-                        <span>Дата изменения</span>
-                        <span class="text-muted">24.02.21</span>
-                    </div>
-                    <div class="d-flex align-items-center">
-                        <label class="col-6" for="discount-input">Скидка</label>
-                        <div class="col-6 d-flex align-items-center">
-                            <input class="form-select me-2" placeholder="Выбрать скидку" name="" id="discount-input" list="discount-select">
-                            <datalist id="discount-select">
-                                <option value="5">5</option>
-                                <option value="10">10</option>
-                                <option value="15">15</option>
-                                <option value="20">20</option>
-                                <option value="25">25</option>
-                                <option value="30">30</option>
-                            </datalist>
-                            <span>%</span>
-                        </div>
-                    </div>
                 </div>
                 <div class="row gx-3">
                     <div class="col-6">
@@ -262,14 +248,39 @@
                 </div>
             </aside>
         </main>
+        <!-- bottom nav -->
+        <footer class="ms-5 ps-3 pe-5 bg-white shadow-lg d-flex align-items-center">
+            <div>Выбрано: 4 элемента</div>
+            <button class="btn btn-primary ms-5">Удалить акцию</button>
+            <nav aria-label="..." class="ms-auto">
+                <ul class="pagination mb-0">
+                    <li class="page-item disabled">
+                        <a class="page-link" href="#" tabindex="-1" aria-disabled="true">
+                            <svg class="me-3" width="9" height="14" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8.823 2.22601L3.72351 7.19851L8.823 12.171L7.25307 13.6985L0.572511 7.19851L7.25307 0.698509L8.823 2.22601Z" fill="#303030"/>
+                    </svg><span>Назад</span></a>
+                    </li>
+                    <li class="page-item active" aria-current="page">
+                        <a class="page-link" href="#">1</a>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link" href="#">...</a></li>
+                    <li class="page-item"><a class="page-link" href="#">785</a></li>
+                    <li class="page-item">
+                        <a class="page-link" href="#">
+                            <span>Далее</span><svg class="ms-3" width="10" height="14" viewBox="0 0 10 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0.806152 2.14948L5.90564 7.12198L0.806153 12.0945L2.37608 13.622L9.05664 7.12198L2.37608 0.621979L0.806152 2.14948Z" fill="#392DFF"/>
+                    </svg>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </footer>
     </div>
 
     <script src="js/bootstrap.js"></script>
-    <script src="js/jquery.min.js"></script>
-    <script src="js/jquery-ui.js"></script>
-    <script src="js/datepicker-ru.js"></script>
     <script src="js/script.js"></script>
-    <script src="js/custom-forms.js"></script>
 </body>
 
 </html>

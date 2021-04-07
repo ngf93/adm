@@ -174,6 +174,18 @@ input.search-in-list{
 
 
 /***************
+FORMS STYLIZATION
+****************/
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+
+/***************
 TEXT STYLIZATION
 ****************/
 .gray {color: #ced4da;}
@@ -181,7 +193,9 @@ TEXT STYLIZATION
 .f_09 {font-size: .9em;}
 
 
-/* modal window for images */
+/*********************** 
+modal window for images 
+***********************/
 #modalImg {
     display: none;
     position: fixed;

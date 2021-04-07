@@ -479,3 +479,13 @@ aside {
     }
     
 }
+
+
+.dynamic-inputs {
+    .input-clone {
+        display: flex;
+        align-items: stretch;
+        input {flex: 1;}
+    }
+    .input-clone:first-child {display: none;}
+}

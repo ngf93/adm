@@ -1,88 +1,207 @@
-// var myData = [
-//     02 {
-//         03
-//         id: 0,
-//             04
-//         title: 'Item 1 '
-//         05
-//     }, {
-//         06
-//         id: 1,
-//         07
-//         title: 'Item 2',
-//         08
-//         subs: [
-//             09 {
-//                 10
-//                 id: 10,
-//                     11
-//                 title: 'Item 2-1'
-//                 12
-//             }, {
-//                 13
-//                 id: 11,
-//                 14
-//                 title: 'Item 2-2'
-//                 15
-//             }, {
-//                 16
-//                 id: 12,
-//                 17
-//                 title: 'Item 2-3'
-//                 18
-//             }
-//             19
-//         ]
-//         20
-//     }, {
-//         21
-//         id: 2,
-//         22
-//         title: 'Item 3'
-//         23
-//     },
-//     24
-//     // more data here
-//     25
-// ];
+/*************** 
+CUSTOM SELECT
+****************/
+let selectElement = document.querySelectorAll('.custom-select');
+let arr_selects = Array.from(selectElement);
+arr_selects.forEach(function(item, i, arr) {
+    const btn = item.querySelector('button');
+    const options = item.querySelector('.cs-options');
 
+    const toggleMenu = function() {
+        // открываем/закрываем окно навигации, добаляя/удаляя активный класс
+        options.classList.toggle('opened');
+    }
 
-// $('#example').comboTree({
-//     2
-//     source: myData
-//     3
-// });
+    btn.addEventListener('click', () => { // при клике на кнопку
+        toggleMenu();
+    });
+    
+    document.addEventListener('click', function(e) {
+        const target = e.target;
+        const current_sel = target == item || item.contains(target);
+        const sel_is_opened = options.classList.contains('opened');
+        if (!current_sel && sel_is_opened) {
+            toggleMenu();
+        }
+    });
 
-// jquery datepicker init
-$(function() {
-    var dateFormat = "mm/dd/yy",
-        from = $("#from")
-        .datepicker({
-            defaultDate: "+1w",
-            changeMonth: true,
-            numberOfMonths: 1
-        })
-        .on("change", function() {
-            to.datepicker("option", "minDate", getDate(this));
-        }),
-        to = $("#to").datepicker({
-            defaultDate: "+1w",
-            changeMonth: true,
-            numberOfMonths: 1
-        })
-        .on("change", function() {
-            from.datepicker("option", "maxDate", getDate(this));
+    let chboxChecked = "";
+    let arrayChecked = []; //massive for checked variants
+
+    if(item.classList.contains('single')) {
+        let div_radio = item.querySelectorAll('.radio');
+        let arr_div_radio = Array.from(div_radio);
+        arr_div_radio.forEach(function(item, i, arr) {
+            item.addEventListener('click', (event) => {
+                toggleNextlevel(item.nextElementSibling);
+            });
         });
 
-    function getDate(element) {
-        var date;
-        try {
-            date = $.datepicker.parseDate(dateFormat, element.value);
-        } catch (error) {
-            date = null;
-        }
+        let inp_radio = item.querySelectorAll('input[type="radio"]');
+        let arr_radio = Array.from(inp_radio);
+        arr_radio.forEach(function(item, i, arr) {
+            item.addEventListener('change', (event) => {
+                singleChboxChange(item);
+            });
+            item.addEventListener('click', (event) => {
+                event.stopPropagation();
+            });
+        });
+    } else {
+        let div_chbox = item.querySelectorAll('.checkbox');
+        let arr_div_chbox = Array.from(div_chbox);
+        arr_div_chbox.forEach(function(item, i, arr) {
+            item.addEventListener('click', (event) => {
+                toggleNextlevel(item.nextElementSibling);
+            });
+        });
 
-        return date;
+        let inp_chbox = item.querySelectorAll('input[type="checkbox"]');
+        let arr_chbox = Array.from(inp_chbox);
+        arr_chbox.forEach(function(item, i, arr) {
+            item.addEventListener('change', (event) => {
+                chboxChange(item);
+            });
+            item.addEventListener('click', (event) => {
+                event.stopPropagation();
+            });
+        });
     }
+
+    /* custom select */
+    function singleChboxChange(el){
+        chboxChecked = el.value;
+        el.closest('.custom-select').querySelector('button').innerHTML = chboxChecked;
+    }
+    function chboxChange(el){
+        if(el.checked){
+            arrayChecked.push(el.value);
+        } else {
+            arrayChecked.splice(arrayChecked.indexOf(el.value), 1);
+        }
+        
+        if(arrayChecked.length == 1){
+            el.closest('.custom-select').querySelector('button').innerHTML = arrayChecked;
+        } else if(arrayChecked.length > 1){
+            el.closest('.custom-select').querySelector('button').innerHTML = 'Выбрано: ' + arrayChecked.length;
+        } else {
+            el.closest('.custom-select').querySelector('button').innerHTML = 'Не выбрано';
+        }
+    }
+
+    
+
 });
-// jquery datepicker init
+
+/* show/hide sublevel elements */
+function toggleNextlevel(elem){
+    if(elem == null){
+        return;
+    } else if(elem.classList.contains('sublevel')){
+        let arr = Array.from(elem.children);
+        arr.forEach(function(item, i, arr) {
+            toggle(item);
+        });
+    } else {return;}
+}
+/* show/hide element */
+function toggle(el){
+    el.style.display = (el.style.display == 'block') ? 'none' : 'block'
+}
+
+
+
+/************  
+SEARCH / FILTER 
+*************/
+let searchEl = document.querySelectorAll('.search-in-list');
+let arr_search = Array.from(searchEl);
+arr_search.forEach(function(item, i, arr) {
+    item.addEventListener('keyup', (event) => {
+        listSearch(item);
+    });
+});
+function listSearch(elem) {
+    let phrase = elem.value.trim();
+    let arr = elem.closest('.search-list').querySelectorAll('.search-item');
+    let regPhrase = new RegExp(phrase, 'i');
+
+    console.log('phrase = '+phrase);
+
+    if(phrase.length == 0){
+        for (let i = 0; i < arr.length; i++) {
+            arr[i].classList.remove('overlap');
+            arr[i].classList.remove('diff');
+        }
+    } else {
+        let flag = false;
+        for (let i = 0; i < arr.length; i++) {
+            flag = regPhrase.test(arr[i].innerHTML);
+            if (flag) {
+                arr[i].classList.add('overlap');
+            } else {
+                arr[i].classList.add('diff');
+            }
+            // if (flag) break;
+        }
+    }
+}
+
+
+/**********
+items list
+***********/
+let parent_elems = Array.from(document.querySelectorAll('.parent'));
+parent_elems.forEach(function(item, i, arr) {
+    const btn = item.querySelector('button.btn-show');
+    btn.addEventListener('click', () => { // при клике на кнопку
+        let nextElem = item.nextElementSibling;
+        if(btn.dataset.state == "hidden" && nextElem.classList.contains('children')) {
+            nextElem.style.display = "block";
+            btn.dataset.state = "showed";
+        } else if(btn.dataset.state == "showed" && nextElem.classList.contains('children')) {
+            nextElem.style.display = "none";
+            btn.dataset.state = "hidden";
+        } else {return;}
+    });
+});
+
+
+/***************************** 
+highlighting editable element - выделение редактируемого элемента
+******************************/
+let nameItem = Array.from(document.querySelectorAll('.to-highlight'));
+nameItem.forEach(function(item, i, arr) {
+    item.addEventListener('click', () => {
+        edit(item.closest('.item-tb')); //при клике на элемент с классом '.to-highlight' запускаем функцию
+    }); 
+});
+/* функция добавляет класс 'editing' редактируемому элементу */
+function edit(elem) {
+    let editableElems = Array.from(document.querySelectorAll('.item-row .item-tb'));
+    editableElems.forEach(function(item, i, arr) {
+        item.classList.remove('editing'); //перебираем все элементы и удаляем класс, т.к можно редактировать только 1 элемент
+    });
+    elem.classList.add('editing'); //присваиваем класс редактируемому элементу
+}
+
+
+/* modal window for images */
+function modalImgOpen(elem) {
+    let modal = document.getElementById('modalImg');
+    modal.style.display = 'block';
+    let attr_src = elem.getAttribute('src');
+    modal.querySelector('.img').innerHTML = '<img src="' + attr_src + '" alt="">';
+}
+function modalImgClose() {
+    let modal = document.getElementById('modalImg');
+    modal.querySelector('.img').innerHTML = "";
+    modal.style.display = 'none';
+}
+
+
+/* adding new inputs */
+function addInput(elem) {
+    let cloneInput = elem.previousElementSibling.cloneNode(true);
+    elem.after(cloneInput);
+}

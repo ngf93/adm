@@ -632,4 +632,23 @@ aside {
 .children .children .children .children .children .children .children .children .children .children .item-tb {
   padding-left: 13rem;
 }
+
+.dynamic-inputs .input-clone {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+}
+
+.dynamic-inputs .input-clone input {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.dynamic-inputs .input-clone:first-child {
+  display: none;
+}
 /*# sourceMappingURL=style.css.map */

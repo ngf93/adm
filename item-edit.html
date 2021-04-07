@@ -145,8 +145,8 @@
                     <div class="tab-content pt-5" id="myTabContent">
                         <!-- Main Tab -->
                         <div class="tab-pane fade show active d-flx" id="main" role="tabpanel" aria-labelledby="main-tab">
-                            <div class="d-flex">
-                                <div class="col-5 pe-5">
+                            <div class="row gx-5 pb-4">
+                                <div class="col-6">
                                     <div class="mb-3">
                                         <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Название">
                                     </div>
@@ -307,7 +307,7 @@
                                             <div class="lh_n">Цена</div>
                                         </div>
                                         <div class="col-6">
-                                            <input type="text" class="form-control text-end" placeholder="0" value="150">
+                                            <input type="number" class="form-control text-end" placeholder="0" value="150">
                                         </div>
                                     </div>
                                     <div class="row gx-3 align-items-center mb-3">    
@@ -315,7 +315,7 @@
                                             <div class="lh_n">Кол-во</div>
                                         </div>
                                         <div class="col-6">
-                                            <input type="text" class="form-control text-end" placeholder="0" value="2">
+                                            <input type="number" class="form-control text-end" placeholder="0" value="2">
                                         </div>
                                     </div>
                                     <div class="form-check form-switch mb-3 ps-0 d-flex justify-content-between">
@@ -331,11 +331,8 @@
                                     </div>
                                     <textarea class="form-control p-3" placeholder="Описание товара" name="" id="" rows="6"></textarea>
                                 </div>
-
-
-                                <div class="col-5 position-relative">
+                                <div class="col-6 position-relative">
                                     <div class="h2 position-absolute" style="top: -55px;">Фото</div>
-
                                     <div class="mb-4 gx-4 row row-cols-2">
                                         <div>
                                             <div class="w-100 border-dashed col-6 text-center text-muted d-flex flex-column align-items-center py-5">
@@ -356,8 +353,7 @@
                                             </div>
                                         </div>
                                     </div>
-
-                                    <div class="row row-cols-4 g-3 overflow-auto align-content-start" style="height: 25rem;">
+                                    <div class="row row-cols-4 g-3 align-content-start">
                                         <div>
                                             <div class="border mb-2 position-relative" style="height: 9.375rem;">
                                                 <input class="form-check-input start-0 bottom-0 ms-2 mb-2 position-absolute" type="checkbox" title="Выбрать">
@@ -449,93 +445,116 @@
                                             </div>
                                         </div>
                                     </div>
-
-
                                 </div>
                             </div>
                         </div>
                         <!-- Main Tab End -->
                         <!-- Options Tab -->
                         <div class="tab-pane fade" id="options" role="tabpanel" aria-labelledby="options-tab">
-                            <div class="fs-4.4 fw-medium col-6 overflow-auto" style="height: 40rem;">
-                                <div class="p-3 border d-flex justify-content-between align-items-baseline">
-                                    <span class="w-50 pe-2">Диагональ</span>
-                                    <input class="form-select w-50" list="datalistOptions" id="exampleDataList" placeholder="">
-                                    <datalist id="datalistOptions">
-                                        <option value="7">
-                                        <option value="12">
-                                        <option value="24">
-                                    </datalist>
+                            <div class="fs-5 fw-medium pb-4">
+                                <div class="row align-items-center border py-2">
+                                    <div class="col-6">
+                                        Диагональ
+                                    </div>
+                                    <div class="col-6">
+                                        <select class="form-select">
+                                            <option value="7">7</option>
+                                            <option value="12">12</option>
+                                            <option value="24">24</option>
+                                        </select>
+                                    </div>
                                 </div>
-                                <div class="p-3 border d-flex justify-content-between align-items-baseline">
-                                    <span class="w-50 pe-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos dolor omnis, molestiae adipisci natus nobis expedita maxime modi ducimus perspiciatis quam non, dolorem cum similique doloribus debitis quidem odit? Consequatur.</span>
-                                    <input class="form-select w-50" list="datalistOptions" id="exampleDataList" placeholder="">
-                                    <datalist id="datalistOptions">
-                                        <option value="7">
-                                        <option value="12">
-                                        <option value="24">
-                                    </datalist>
+                                <div class="row align-items-center border py-2">
+                                    <div class="col-6">
+                                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corrupti eaque impedit nam ut maiores consectetur fugit tempora dignissimos minima! Rerum, iste. Nisi labore voluptates animi enim repudiandae porro deleniti consequuntur?
+                                    </div>
+                                    <div class="col-6">
+                                        <input class="form-select" list="datalistOptions" id="exampleDataList" placeholder="">
+                                        <datalist id="datalistOptions">
+                                            <option value="7">
+                                            <option value="12">
+                                            <option value="24">
+                                        </datalist>
+                                    </div>
                                 </div>
-                                <div class="p-3 border d-flex justify-content-between align-items-baseline">
-                                    <span class="w-50 pe-2">Диагональ</span>
-                                    <input class="form-select w-50" list="datalistOptions" id="exampleDataList" placeholder="">
-                                    <datalist id="datalistOptions">
-                                        <option value="7">
-                                        <option value="12">
-                                        <option value="24">
-                                    </datalist>
+                                <div class="row align-items-center border py-2">
+                                    <div class="col-6">
+                                        Диагональ
+                                    </div>
+                                    <div class="col-6">
+                                        <select class="form-select">
+                                            <option value="7">7</option>
+                                            <option value="12">12</option>
+                                            <option value="24">24</option>
+                                        </select>
+                                    </div>
                                 </div>
-                                <div class="p-3 border d-flex justify-content-between align-items-baseline">
-                                    <span class="w-50 pe-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos dolor omnis, molestiae adipisci natus nobis expedita maxime modi ducimus perspiciatis quam non, dolorem cum similique doloribus debitis quidem odit? Consequatur.</span>
-                                    <input class="form-select w-50" list="datalistOptions" id="exampleDataList" placeholder="">
-                                    <datalist id="datalistOptions">
-                                        <option value="7">
-                                        <option value="12">
-                                        <option value="24">
-                                    </datalist>
+                                <div class="row align-items-center border py-2">
+                                    <div class="col-6">
+                                        Диагональ
+                                    </div>
+                                    <div class="col-6">
+                                        <select class="form-select">
+                                            <option value="7">7</option>
+                                            <option value="12">12</option>
+                                            <option value="24">24</option>
+                                        </select>
+                                    </div>
                                 </div>
-                                <div class="p-3 border d-flex justify-content-between align-items-baseline">
-                                    <span class="w-50 pe-2">Диагональ</span>
-                                    <input class="form-select w-50" list="datalistOptions" id="exampleDataList" placeholder="">
-                                    <datalist id="datalistOptions">
-                                        <option value="7">
-                                        <option value="12">
-                                        <option value="24">
-                                    </datalist>
+                                <div class="row align-items-center border py-2">
+                                    <div class="col-6">
+                                        Диагональ
+                                    </div>
+                                    <div class="col-6">
+                                        <select class="form-select">
+                                            <option value="7">7</option>
+                                            <option value="12">12</option>
+                                            <option value="24">24</option>
+                                        </select>
+                                    </div>
                                 </div>
-                                <div class="p-3 border d-flex justify-content-between align-items-baseline">
-                                    <span class="w-50 pe-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos dolor omnis, molestiae adipisci natus nobis expedita maxime modi ducimus perspiciatis quam non, dolorem cum similique doloribus debitis quidem odit? Consequatur.</span>
-                                    <input class="form-select w-50" list="datalistOptions" id="exampleDataList" placeholder="">
-                                    <datalist id="datalistOptions">
-                                        <option value="7">
-                                        <option value="12">
-                                        <option value="24">
-                                    </datalist>
+                                <div class="row align-items-center border py-2">
+                                    <div class="col-6">
+                                        Диагональ
+                                    </div>
+                                    <div class="col-6">
+                                        <select class="form-select">
+                                            <option value="7">7</option>
+                                            <option value="12">12</option>
+                                            <option value="24">24</option>
+                                        </select>
+                                    </div>
                                 </div>
-                                <div class="p-3 border d-flex justify-content-between align-items-baseline">
-                                    <span class="w-50 pe-2">Диагональ</span>
-                                    <input class="form-select w-50" list="datalistOptions" id="exampleDataList" placeholder="">
-                                    <datalist id="datalistOptions">
-                                        <option value="7">
-                                        <option value="12">
-                                        <option value="24">
-                                    </datalist>
+                                <div class="row align-items-center border py-2">
+                                    <div class="col-6">
+                                        Диагональ
+                                    </div>
+                                    <div class="col-6">
+                                        <select class="form-select">
+                                            <option value="7">7</option>
+                                            <option value="12">12</option>
+                                            <option value="24">24</option>
+                                        </select>
+                                    </div>
                                 </div>
-                                <div class="p-3 border d-flex justify-content-between align-items-baseline">
-                                    <span class="w-50 pe-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos dolor omnis, molestiae adipisci natus nobis expedita maxime modi ducimus perspiciatis quam non, dolorem cum similique doloribus debitis quidem odit? Consequatur.</span>
-                                    <input class="form-select w-50" list="datalistOptions" id="exampleDataList" placeholder="">
-                                    <datalist id="datalistOptions">
-                                        <option value="7">
-                                        <option value="12">
-                                        <option value="24">
-                                    </datalist>
+                                <div class="row align-items-center border py-2">
+                                    <div class="col-6">
+                                        Диагональ
+                                    </div>
+                                    <div class="col-6">
+                                        <select class="form-select">
+                                            <option value="7">7</option>
+                                            <option value="12">12</option>
+                                            <option value="24">24</option>
+                                        </select>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                         <!-- Options Tab End -->
                         <!-- SEO Tab -->
                         <div class="tab-pane fade" id="seo" role="tabpanel" aria-labelledby="seo-tab">
-                            <div class="overflow-auto px-3" style="height: 40rem;">
+                            <div class="overflow-auto px-3">
                                 <div class="col-6">
                                     <!-- Title -->
                                     <div class="mb-5">
@@ -674,9 +693,7 @@
     </div>
 
     <script src="js/bootstrap.js"></script>
-    <script src="js/jquery.min.js"></script>
     <script src="js/script.js"></script>
-    <script src="js/custom-forms.js"></script>
 </body>
 
 </html>
