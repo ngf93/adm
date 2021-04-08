@@ -301,27 +301,50 @@ input[type=file] {
   width: 470px;
 }
 
-.nav-link-3 {
+.table-list {
+  border-top: 1px solid #DAE2E8 !important;
+}
+
+.table-list .nav-item-3 {
+  position: relative;
+}
+
+.table-list .nav-item-3 .btn-delete {
+  position: absolute;
+  top: 50%;
+  right: 1rem;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  border-top-width: 1px !important;
+}
+
+.table-list .nav-item-3 .nav-link-3 {
   width: 100%;
   text-align: left !important;
   background-color: white;
   font-size: inherit;
 }
 
-.nav-link-3.active {
+.table-list .nav-item-3 .nav-link-3.active {
   background-color: rgba(57, 45, 255, 0.1);
 }
 
-.nav-link-3.border {
+.table-list .nav-item-3 .nav-link-3.border {
   border-top-width: 0px !important;
-}
-
-.table-list {
-  border-top: 1px solid #DAE2E8 !important;
 }
 
 .table-list .border {
   border-top-width: 0px !important;
+  position: relative;
+}
+
+.table-list .border .btn-delete {
+  position: absolute;
+  top: 50%;
+  right: 1rem;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  border-top-width: 1px !important;
 }
 
 .btn-3 {

@@ -281,25 +281,45 @@ input[type=file] {
     width: 470px;
 }
 
-.nav-link-3 {
-    width: 100%;
-    text-align: left !important;
-    background-color: white;
-    font-size: inherit;
-    &.active {
-        background-color: (rgba($color1, 0.1));
-    }
-    &.border {
-        border-top-width: 0px !important;
-    }
-}
+
+
 // .nav-item-3:first-child {
 //     .nav-link-3.border {border-top-width: 1px !important;}
 // }
 .table-list {
     border-top: 1px solid #DAE2E8 !important;
+    .nav-item-3 {
+        position: relative;
+        .btn-delete {
+            position: absolute;
+            top: 50%;
+            right: 1rem;
+            transform: translateY(-50%);
+            border-top-width: 1px !important;
+        }
+        .nav-link-3 {
+            width: 100%;
+            text-align: left !important;
+            background-color: white;
+            font-size: inherit;
+            &.active {
+                background-color: (rgba($color1, 0.1));
+            }
+            &.border {
+                border-top-width: 0px !important;
+            }
+        }
+    }
     .border {
         border-top-width: 0px !important;
+        position: relative;
+        .btn-delete {
+            position: absolute;
+            top: 50%;
+            right: 1rem;
+            transform: translateY(-50%);
+            border-top-width: 1px !important;
+        }
     }
 }
 
