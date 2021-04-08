@@ -310,7 +310,18 @@ input[type=file] {
 
 .nav-link-3.active {
   background-color: rgba(57, 45, 255, 0.1);
-  border: none !important;
+}
+
+.nav-link-3.border {
+  border-top-width: 0px !important;
+}
+
+.table-list {
+  border-top: 1px solid #DAE2E8 !important;
+}
+
+.table-list .border {
+  border-top-width: 0px !important;
 }
 
 .btn-3 {
