@@ -172,6 +172,21 @@ body {
 
 .border-dashed {
     border: 1px dashed #909090;
+    -moz-border-image: url(../img/dashed-border.png) round;
+    -webkit-border-image: url(../img/dashed-border.png) round; 
+    -o-border-image: url(../img/dashed-border.png) round;
+    border-image: url(../img/dashed-border.png) round;
+    border-image-slice: 10;
+    border-image-width: 10px;
+    &.highlight {
+        border: 1px dashed $color5;
+        -moz-border-image: url(../img/dashed-border-active.png) round;
+        -webkit-border-image: url(../img/dashed-border-active.png) round; 
+        -o-border-image: url(../img/dashed-border-active.png) round;
+        border-image: url(../img/dashed-border-active.png) round;
+        border-image-slice: 10;
+        border-image-width: 10px;
+    }
 }
 
 .form-check-input {
@@ -282,10 +297,6 @@ input[type=file] {
 }
 
 
-
-// .nav-item-3:first-child {
-//     .nav-link-3.border {border-top-width: 1px !important;}
-// }
 .table-list {
     border-top: 1px solid #DAE2E8 !important;
     .nav-item-3 {
@@ -340,28 +351,6 @@ input[type=file] {
     }
 }
 
-.level-1,
-.level-2,
-.level-3{
-    display: flex;
-    flex-grow: 1;
-}
-
-.level-2>.col-6 {
-    padding-left: 25px;
-}
-
-.level-3>.col-6 {
-    padding-left: 40px;
-}
-
-.level-1>.col-6,
-.level-2>.col-6,
-.level-3>.col-6 {
-    flex-grow: 1;
-}
-
-
 
 nav.nav-top {
     height: 80px;
@@ -383,9 +372,6 @@ aside {
     overflow: auto;
 }
 
-.flex-1 {flex: 1;}
-
-.children {display: none;}
 
 /* info in table */
 .items-list-head {
@@ -479,6 +465,7 @@ aside {
 }
 
 
+.children {display: none;}
 .children {
     .item-tb {padding-left: 3rem;}
     .children {
@@ -519,4 +506,15 @@ aside {
         input {flex: 1;}
     }
     .input-clone:first-child {display: none;}
+}
+
+
+.flex-1 {flex: 1;}
+
+
+.img-cover img {
+    width: 100%;
+    height: 330px;
+    object-fit: scale-down;
+    object-position: left top;
 }

@@ -205,3 +205,48 @@ function addInput(elem) {
     let cloneInput = elem.previousElementSibling.cloneNode(true);
     elem.after(cloneInput);
 }
+
+
+// ************************ Drag and drop file upload ***************** //
+let dropAreas = Array.from(document.querySelectorAll('.drop-area'));
+dropAreas.forEach(function(item, i, arr) {
+    // Prevent default drag behaviors
+    ;['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+        item.addEventListener(eventName, preventDefaults, false)   
+        document.body.addEventListener(eventName, preventDefaults, false)
+    })
+    
+    // Highlight drop area when item is dragged over it
+    ;['dragenter', 'dragover'].forEach(eventName => {
+        item.addEventListener(eventName, highlight, false)
+    })
+    
+    ;['dragleave', 'drop'].forEach(eventName => {
+        item.addEventListener(eventName, unhighlight, false)
+    })
+    
+    // Handle dropped files
+    item.addEventListener('drop', handleDrop, false)
+    
+    function preventDefaults (e) {
+        e.preventDefault()
+        e.stopPropagation()
+    }
+    
+    function highlight(e) {
+        item.classList.add('highlight')
+    }
+    
+    function unhighlight(e) {
+        item.classList.remove('highlight')
+    }
+    
+    function handleDrop(e) {
+        let dt = e.dataTransfer;
+        let files = dt.files;
+        let inp = item.querySelector('input[type="file"]');
+        console.log(files);
+        inp.files = files;
+    
+    }
+});

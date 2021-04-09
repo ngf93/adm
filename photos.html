@@ -116,23 +116,18 @@
         
         <main class="d-flex px-5 py-4">
             <section class="content bg-white p-5">
-                <div class="border-dashed w-100 px-5 py-4 text-end mb-5 position-relative">
-                    <div class="position-absolute start-50 translate-middle top-50">
-                        <svg class="me-4" width="65" height="53" viewBox="0 0 65 53" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M54.1567 17.8931C51.1526 5.92548 39.0158 -1.34077 27.0482 1.66337C17.6959 4.01111 10.905 12.0942 10.2053 21.7113C3.56472 22.8064 -0.930829 29.0773 0.164276 35.7179C1.13777 41.6214 6.25317 45.9449 12.2363 45.9211H22.3915V41.8591H12.2363C7.74953 41.8591 4.11221 38.2217 4.11221 33.735C4.11221 29.2482 7.74953 25.6108 12.2363 25.6108C13.3581 25.6108 14.2674 24.7016 14.2674 23.5798C14.2572 13.4845 22.433 5.29231 32.5283 5.28228C41.2673 5.27352 48.7901 11.4517 50.4806 20.0255C50.6475 20.8816 51.3422 21.5356 52.2069 21.6503C57.7595 22.441 61.6196 27.5832 60.829 33.1357C60.1191 38.1216 55.862 41.8339 50.8258 41.8591H42.7017V45.9211H50.8258C58.6778 45.8974 65.0237 39.5128 64.9999 31.6609C64.9801 25.1248 60.5062 19.4441 54.1567 17.8931Z" fill="#EC6446"/>
-                                <path d="M31.1048 26.2L22.9807 34.3241L25.8445 37.1878L30.5158 32.5368V52.0143H34.5779V32.5368L39.2289 37.1878L42.0927 34.3241L33.9686 26.2C33.1763 25.4124 31.897 25.4124 31.1048 26.2Z" fill="#EC6446"/>
-                                    </svg>
-                        <span> Перетащите изображение</span>
+                <div class="drop-area border-dashed w-100 px-5 py-4 mb-5 d-flex align-items-center justify-content-end">
+                    <div class="mx-auto d-flex align-items-center">
+                        <img src="img/icons/upload.svg">
+                        <div class="ms-5 fs-5">Перетащите изображение</div>
                     </div>
-                    <span class="text-muted mx-5 px-5">или нажмите</span>
-
-                    <div class="position-relative d-inline-block">
-                        <input type="file" class="top-0 start-0 w-100 h-100 position-absolute">
+                    <div class="text-muted mx-5 fs-5">или нажмите</div>
+                    <form class="d-inline-block position-relative">
+                        <input type="file" multiple accept="image/*" class="top-0 start-0 w-100 h-100 position-absolute">
                         <div class="btn btn-primary">Загрузить</div>
-                    </div>
-
-
+                    </form>
                 </div>
+                
                 <div class="row row-cols-5 gy-4 overflow-auto">
                     <div>
                         <div class="position-relative">
