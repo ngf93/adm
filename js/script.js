@@ -250,3 +250,31 @@ dropAreas.forEach(function(item, i, arr) {
     
     }
 });
+
+
+/* password button state change */
+let passBtn = Array.from(document.querySelectorAll('.pass_btn'));
+passBtn.forEach(function(item, i, arr) {
+    item.addEventListener('click', () => {
+        let state = item.getAttribute('data-state');
+        if(state == 'invisible'){
+            item.previousElementSibling.type = 'text';
+            item.dataset.state = 'visible';
+        } else {
+            item.previousElementSibling.type = 'password';
+            item.dataset.state = 'invisible';
+        }
+    }); 
+});
+// $(function () {
+//     $(".pass_btn").click(function(){
+//       let state = $(this).attr('data-state');
+//       if(state == 'invisible'){
+//         $(this).prev("input").attr('type', 'text');
+//         $(this).attr('data-state', 'visible');
+//       } else {
+//         $(this).prev("input").attr('type', 'password');
+//         $(this).attr('data-state', 'invisible');
+//       }
+//     });
+//   });

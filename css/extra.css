@@ -1,3 +1,11 @@
+:root {
+    --color-1: #392DFF;
+    --rgb-color-1: 57 45 255;
+}
+
+.main-color {color: var(--color-1);}
+h1
+
 /*********
 scrollbar
 *********/
@@ -215,4 +223,86 @@ modal window for images
     width: 100%;
     height: 100%;
     object-fit: scale-down;
+}
+
+
+/************* entrance window ****************/
+.entrance_window {
+    width: 100%;
+    height: 100vh;
+    padding: 5% 8vw;
+    background-color: #fff;
+}
+.entrance_window form {
+    width: 550px;
+    max-width: 100%;
+}
+.password {
+    position: relative;
+}
+.password input {
+    position: relative;
+}
+.password button {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 3em;
+  height: 100%;
+  display: flex;
+  border: none;
+}
+.password button[data-state="invisible"] {
+  background: url(../img/icons/invisible.svg) no-repeat center;
+  background-size: 1.25em 1.25em;
+  background-position: left center;
+}
+.password button[data-state="visible"] {
+  background: url(../img/icons/visibility.svg) no-repeat center;
+  background-size: 1.25em 1.25em;
+  background-position: left center;
+}
+.password button img {width: 100%;}
+
+.entrance_window .img {
+    background-color: #E5E5E5;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 2em;
+    min-height: 550px;
+    color: var(--color-1);
+    font-size: 2em;
+    font-weight: 700;
+    text-align: center;
+}
+.entrance_window .img img {width: 50%;}
+
+.input-box {
+    background: #FFFFFF;
+    border: 1px solid #C1BBBB;
+    padding: .6em 1em .7em 1.5em;
+    position: relative;
+}
+.input-box-focus::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 3px;;
+    background-color: var(--color-1);
+}
+.input-box input {
+    border: none;
+    outline: none;
+}
+.input-box input:focus {outline: none;}
+
+@media (max-width: 1199px){
+    .entrance_window {padding: 4% 6vw;}
+}
+@media (max-width: 575px){
+    .entrance_window form {font-size: 13px;}
 }
