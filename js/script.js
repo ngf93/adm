@@ -88,9 +88,6 @@ arr_selects.forEach(function(item, i, arr) {
             el.closest('.custom-select').querySelector('button').innerHTML = 'Не выбрано';
         }
     }
-
-    
-
 });
 
 /* show/hide sublevel elements */

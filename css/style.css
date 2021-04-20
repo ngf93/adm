@@ -136,6 +136,14 @@ body {
   background-image: url("../img/icons/btn-edit.svg");
 }
 
+.btn-edit-4 {
+  background-image: url("../img/icons/btn-edit.svg");
+  background-size: 70% 70%;
+  background-color: #fff;
+  width: 2rem;
+  height: 2rem;
+}
+
 .btn-delete {
   background-image: url("../img/icons/btn-delete.svg");
 }
@@ -313,12 +321,45 @@ input[type=file] {
   width: 470px;
 }
 
+#paramGroup li {
+  position: relative;
+}
+
+#paramGroup .btn-edit {
+  position: absolute;
+  top: 2px;
+  right: 1px;
+  height: calc(50% - 3px);
+  width: 22px;
+  border: none !important;
+  background-size: 70%;
+}
+
+#paramGroup .btn-delete {
+  position: absolute;
+  bottom: 2px;
+  right: 1px;
+  height: calc(50% - 3px);
+  width: 22px;
+  border: none !important;
+  background-size: 70%;
+}
+
 .table-list {
   border-top: 1px solid #DAE2E8 !important;
 }
 
 .table-list .nav-item-3 {
   position: relative;
+}
+
+.table-list .nav-item-3 .btn-edit {
+  position: absolute;
+  top: 50%;
+  right: 3.5rem;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  border-top-width: 1px !important;
 }
 
 .table-list .nav-item-3 .btn-delete {
@@ -348,6 +389,15 @@ input[type=file] {
 .table-list .border {
   border-top-width: 0px !important;
   position: relative;
+}
+
+.table-list .border .btn-edit {
+  position: absolute;
+  top: 50%;
+  right: 3.5rem;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  border-top-width: 1px !important;
 }
 
 .table-list .border .btn-delete {
@@ -659,6 +709,15 @@ aside {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
+}
+
+.dynamic-inputs .input-clone input[type="color"] {
+  min-height: 3em;
+  width: 3em;
+  padding: 0;
+  -webkit-box-flex: unset;
+  -ms-flex: unset;
+      flex: unset;
 }
 
 .dynamic-inputs .input-clone:first-child {

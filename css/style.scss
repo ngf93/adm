@@ -120,6 +120,13 @@ body {
 .btn-edit {
     background-image: url('../img/icons/btn-edit.svg');
 }
+.btn-edit-4 {
+    background-image: url('../img/icons/btn-edit.svg');
+    background-size: 70% 70%;
+    background-color: #fff;
+    width: 2rem; 
+    height: 2rem;
+}
 .btn-delete {
     background-image: url('../img/icons/btn-delete.svg');
 }
@@ -296,11 +303,41 @@ input[type=file] {
     width: 470px;
 }
 
+#paramGroup {
+    li {
+        position: relative;
+    }
+    .btn-edit {
+        position: absolute;
+        top: 2px;
+        right: 1px;
+        height: calc(50% - 3px);
+        width: 22px;
+        border: none !important;
+        background-size: 70%;
+    }
+    .btn-delete {
+        position: absolute;
+        bottom: 2px;
+        right: 1px;
+        height: calc(50% - 3px);
+        width: 22px;
+        border: none !important;
+        background-size: 70%;
+    }
+}
 
 .table-list {
     border-top: 1px solid #DAE2E8 !important;
     .nav-item-3 {
         position: relative;
+        .btn-edit {
+            position: absolute;
+            top: 50%;
+            right: 3.5rem;
+            transform: translateY(-50%);
+            border-top-width: 1px !important;
+        }
         .btn-delete {
             position: absolute;
             top: 50%;
@@ -324,6 +361,13 @@ input[type=file] {
     .border {
         border-top-width: 0px !important;
         position: relative;
+        .btn-edit {
+            position: absolute;
+            top: 50%;
+            right: 3.5rem;
+            transform: translateY(-50%);
+            border-top-width: 1px !important;
+        }
         .btn-delete {
             position: absolute;
             top: 50%;
@@ -504,6 +548,13 @@ aside {
         display: flex;
         align-items: stretch;
         input {flex: 1;}
+        input[type="color"] {
+            min-height: 3em;
+            width: 3em;
+            padding: 0;
+            -webkit-box-flex: unset;
+            flex: unset;
+        }
     }
     .input-clone:first-child {display: none;}
 }
