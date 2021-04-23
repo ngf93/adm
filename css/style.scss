@@ -547,16 +547,16 @@ aside {
     .input-clone {
         display: flex;
         align-items: stretch;
-        input {flex: 1;}
-        input[type="color"] {
-            min-height: 3em;
-            width: 3em;
-            padding: 0;
-            -webkit-box-flex: unset;
-            flex: unset;
-        }
+        input:not([type="color"]) {flex: 1;}
     }
     .input-clone:first-child {display: none;}
+}
+input[type="color"] {
+    min-height: 3em;
+    width: 3em;
+    padding: 0;
+    -webkit-box-flex: unset;
+    flex: unset;
 }
 
 
